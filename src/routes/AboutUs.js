@@ -1,13 +1,15 @@
 import React from 'react'
 
-import { Header } from '../components/Header.js'
-import { AboutUsContent } from '../components/AboutUsContent.js'
+import { Header } from '../components/Header'
+import { AboutContent } from '../components/AboutContent'
+import { Footer } from '../components/Footer'
 
 export const AboutUs = () => {
   return (
     <>
       <Header />
-      <AboutUsContent />
+      <AboutContent />
+      <Footer />
     </>
   )
 }

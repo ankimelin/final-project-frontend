@@ -1,7 +1,11 @@
 import React from 'react'
 
+import { TitleContainer, TitleText } from '../styling/StyledTitle'
+
 export const Title = () => {
   return (
-    <p>hej from title component</p>
+    <TitleContainer>
+      <TitleText>CURATED</TitleText>
+    </TitleContainer>
   )
 }

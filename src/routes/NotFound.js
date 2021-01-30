@@ -1,7 +1,15 @@
 import React from 'react'
 
+import { Header } from '../components/Header'
+import { NotFoundContent } from '../components/NotFoundContent'
+import { Footer } from '../components/Footer'
+
 export const NotFound = () => {
   return (
-    <p>hej from NotFound</p>
+    <>
+      <Header />
+      <NotFoundContent />
+      <Footer />
+    </>
   )
 }

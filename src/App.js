@@ -10,16 +10,16 @@ export const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path='/' exact>
+        <Route exact path='/'>
           <Redirect to='/exhibitions' />
         </Route>
-        <Route path='/exhibitions' exact>
+        <Route exact path='/exhibitions'>
           <Exhibitions />
         </Route>
-        <Route path='/exhibitions/:exhibitionId' exact >
+        <Route exact path='/exhibitions/:exhibitionId'>
           <Exhibition />
         </Route>
-        <Route path='/aboutus' exact>
+        <Route exact path='/about-us'>
           <AboutUs />
         </Route>
         <Route>

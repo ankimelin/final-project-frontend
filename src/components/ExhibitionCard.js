@@ -1,18 +1,27 @@
 import React from 'react'
 
-export const ExhibitionCard = ({ ...exhibition }) => {
+import { ExhibitionLink, ExhibitionCardContainer, ExhibitionCardTitle, ExhibitionCardText, ExhibitionCardDateContainer }
+  from '../styling/StyledExhibitionCard'
+
+export const ExhibitionCard = ({ filter, ...exhibition }) => {
   return (
-    <>
-      <br></br>
-      <p>{exhibition.title}</p>
-      <p>{exhibition.startDate}</p>
-      <p>{exhibition.endDate}</p>
-      <p>{exhibition.place}</p>
-      <p>{exhibition.link}</p>
-      {exhibition.artists.length > 0 ?
-        exhibition.artists.map(artist => <li key={artist}>{artist}</li>) :
-        <p>no artists</p>}
-      {exhibition.topExhibition ? <p>top</p> : <p>not top</p>}
-    </>
+    <ExhibitionLink to={`/exhibitions/${exhibition.id}`}>
+      <ExhibitionCardContainer>
+        <ExhibitionCardTitle>{exhibition.title}</ExhibitionCardTitle>
+        <ExhibitionCardText className='artists'>
+          {exhibition.artists > 0 ? exhibition.artists.map(artist => artist) : null}
+        </ExhibitionCardText>
+        <ExhibitionCardDateContainer>
+          {filter === 'Ongoing' ?
+            <ExhibitionCardText className='until'>Until</ExhibitionCardText> :
+            <>
+              <ExhibitionCardText className='date'>{exhibition.startDate}</ExhibitionCardText>
+              <ExhibitionCardText className='space'>-</ExhibitionCardText>
+            </>}
+          <ExhibitionCardText className='date'>{exhibition.endDate}</ExhibitionCardText>
+        </ExhibitionCardDateContainer>
+        <ExhibitionCardText className='museum'>{exhibition.museum}</ExhibitionCardText>
+      </ExhibitionCardContainer>
+    </ExhibitionLink>
   )
 }
