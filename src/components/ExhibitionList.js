@@ -18,22 +18,15 @@ export const ExhibitionList = () => {
       {status && loading &&
         <TailSpinLoader />}
       {status && !loading &&
-        < ExhibitionsContainer >
-          {
-            displayedExhibitions.map(exhibition => {
-              return <ExhibitionCard
-                key={exhibition.id}
-                filter={activeFilter}
-                {...exhibition}
-              />
-            })
-          }
-        </ExhibitionsContainer>
-      }
-      {
-        !status &&
-        <NotFoundContent />
-      }
+        <ExhibitionsContainer>
+          {displayedExhibitions.map(exhibition => {
+            return <ExhibitionCard
+              key={exhibition.id}
+              filter={activeFilter}
+              {...exhibition} />
+          })}
+        </ExhibitionsContainer>}
+      {!status && !loading && <NotFoundContent />}
     </>
   )
 }

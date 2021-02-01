@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
+import { exhibitions } from '../reducers/exhibitions'
 import { AboutContainer, AboutText } from '../styling/StyledAboutContent'
 
 export const AboutContent = () => {
+
+  const dispatch = useDispatch()
+  const updateFilter = () => {
+    dispatch(exhibitions.actions.updateExhibitionFilter('Ongoing'))
+  }
+  useEffect(updateFilter, [])
 
   return (
     <AboutContainer>

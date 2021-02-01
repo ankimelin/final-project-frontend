@@ -15,21 +15,20 @@ export const ExhibitionFilter = () => {
   const activeFilter = useSelector(store => store.exhibitions.activeFilter)
 
   const updateFilter = (filter) => {
-    dispatch(exhibitions.actions.updateFilter(filter))
+    dispatch(exhibitions.actions.updateExhibitionFilter(filter))
   }
 
   return (
     <>
       {status && !loading &&
         < FilterContainer >
-          {
-            filters.map(filter => {
-              return <FilterButton key={filter}
-                className={activeFilter === filter ? 'active' : null}
-                onClick={() => updateFilter(filter)}>
-                {filter}
-              </FilterButton>
-            })
+          {filters.map(filter => {
+            return <FilterButton key={filter}
+              className={activeFilter === filter ? 'active' : null}
+              onClick={() => updateFilter(filter)}>
+              {filter}
+            </FilterButton>
+          })
           }
         </FilterContainer>}
     </>

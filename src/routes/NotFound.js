@@ -1,15 +1,13 @@
 import React from 'react'
 
-import { Menu } from '../components/Menu'
-import { Title } from '../components/Title'
+import { Header } from '../components/Header'
 import { NotFoundContent } from '../components/NotFoundContent'
 import { Footer } from '../components/Footer'
 
 export const NotFound = () => {
   return (
     <>
-      <Menu />
-      <Title />
+      <Header />
       <NotFoundContent />
       <Footer />
     </>

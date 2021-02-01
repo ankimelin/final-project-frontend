@@ -10,7 +10,6 @@ import { BackContainer, BackIcon, ExhibitionDetailsContainer, ExhibitionDetailsI
 export const ExhibitionDetails = () => {
 
   const { exhibitionId } = useParams()
-
   const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${exhibitionId}`
 
   const [exhibition, setExhibition] = useState({})

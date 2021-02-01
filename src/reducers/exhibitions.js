@@ -5,6 +5,7 @@ export const exhibitions = createSlice({
   initialState: {
     allExhibitions: [],
     displayedExhibitions: [],
+    detailedExhibition: {},
     activeFilter: 'Ongoing',
     status: true,
     loading: true
@@ -27,7 +28,7 @@ export const exhibitions = createSlice({
 
       state.displayedExhibitions = sortedExhibitions
     },
-    updateFilter: (state, action) => {
+    updateExhibitionFilter: (state, action) => {
       state.activeFilter = action.payload
 
       // console.log(state.allExhibitions)
@@ -58,6 +59,9 @@ export const exhibitions = createSlice({
       })
 
       state.displayedExhibitions = sortedExhibitions
+    },
+    setDetailedExhibition: (state, action) => {
+      state.detailedExhibition = action.payload
     },
     setStatus: (state, action) => {
       state.status = action.payload
