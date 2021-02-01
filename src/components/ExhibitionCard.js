@@ -5,6 +5,10 @@ import { ExhibitionLink, ExhibitionCardContainer, ExhibitionCardTitle, Exhibitio
 
 export const ExhibitionCard = ({ filter, ...exhibition }) => {
   return (
+    // <ExhibitionLink to={{
+    //   pathname: `/exhibitions/${exhibition.id}`,
+    //   state: { activeFilter: filter }
+    // }}>
     <ExhibitionLink to={`/exhibitions/${exhibition.id}`}>
       <ExhibitionCardContainer>
         <ExhibitionCardTitle>{exhibition.title}</ExhibitionCardTitle>
@@ -22,6 +26,6 @@ export const ExhibitionCard = ({ filter, ...exhibition }) => {
         </ExhibitionCardDateContainer>
         <ExhibitionCardText className='museum'>{exhibition.museum}</ExhibitionCardText>
       </ExhibitionCardContainer>
-    </ExhibitionLink>
+    </ExhibitionLink >
   )
 }

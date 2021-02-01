@@ -8,11 +8,10 @@ export const AboutContainer = styled.div`
     align-items: center;
     padding: 0 100px;
     height: calc(100vh - 253px);
-    
   }
 
   @media (min-width: 1024px) {
-  
+    padding: 100px;
   }
 `
 

@@ -2,20 +2,25 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const ExhibitionLink = styled(Link)`
-  margin-bottom: 25px; 
   text-decoration: none;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 25px;
+  }
 `
 
 export const ExhibitionCardContainer = styled.div`
   padding: 20px;
+  margin-bottom: 25px; 
   background-color: #F9F9F9;
   color: black;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    
+
   }
   
   @media (min-width: 1024px) {
+    margin-bottom: 0; 
     width: 300px; 
 
     &:hover {

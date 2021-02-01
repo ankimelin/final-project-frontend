@@ -40,6 +40,7 @@ export const ExhibitionDetails = () => {
         setLoading(false)
       })
       .catch(err => {
+        console.log(err)
         setStatus(false)
         setLoading(false)
       })
