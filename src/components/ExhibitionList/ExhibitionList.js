@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { ExhibitionCard } from './ExhibitionCard'
-import { TailSpinLoader } from './TailSpinLoader'
-import { NotFoundContent } from './NotFoundContent'
-import { ExhibitionsContainer } from '../styling/StyledExhibitionList'
+import { ExhibitionCardContent } from '../ExhibitionCard/ExhibitionCardContent'
+import { LoaderContent } from '../Loader/LoaderContent'
+import { NotFoundContent } from '../NotFound/NotFoundContent'
+import { ExhibitionsContainer } from './ExhibitionListStyled'
 
 export const ExhibitionList = () => {
 
@@ -16,11 +16,11 @@ export const ExhibitionList = () => {
   return (
     <>
       {status && loading &&
-        <TailSpinLoader />}
-      {status && !loading &&
+        <LoaderContent />}
+      {status && !loading && // move out the below to ExhibitionListContent?
         <ExhibitionsContainer>
           {displayedExhibitions.map(exhibition => {
-            return <ExhibitionCard
+            return <ExhibitionCardContent
               key={exhibition.id}
               filter={activeFilter}
               {...exhibition} />

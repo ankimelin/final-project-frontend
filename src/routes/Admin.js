@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { HeaderContent } from '../components/Header/HeaderContent'
-import { NotFoundContent } from '../components/NotFound/NotFoundContent'
+import { AdminLogin } from '../components/AdminLogin'
 import { FooterContent } from '../components/Footer/FooterContent'
 
-export const NotFound = () => {
+export const Admin = () => {
   return (
     <>
       <HeaderContent />
-      <NotFoundContent />
+      <AdminLogin />
       <FooterContent />
     </>
   )

@@ -1,16 +1,16 @@
 import React from 'react'
 
-import { Header } from '../components/Header'
-import { ExhibitionDetails } from '../components/ExhibitionDetails'
-import { Footer } from '../components/Footer'
-import { MainContainer } from '../styling/StyledRoutes'
+import { HeaderContent } from '../components/Header/HeaderContent'
+import { ExhibitionDetails } from '../components/ExhibitionDetails/ExhibitionDetails'
+import { FooterContent } from '../components/Footer/FooterContent'
+import { MainContainer } from './RoutesStyled'
 
 export const Exhibition = () => {
   return (
     <MainContainer>
-      <Header />
+      <HeaderContent />
       <ExhibitionDetails />
-      <Footer />
+      <FooterContent />
     </MainContainer>
   )
 }

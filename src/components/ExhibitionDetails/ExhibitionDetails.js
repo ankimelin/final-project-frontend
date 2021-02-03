@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { NotFoundContent } from './NotFoundContent'
-import { TailSpinLoader } from './TailSpinLoader'
+import { NotFoundContent } from '../NotFound/NotFoundContent'
+import { LoaderContent } from '../Loader/LoaderContent'
 
 import { BackContainer, BackIcon, ExhibitionDetailsContainer, ExhibitionDetailsImage, ExhibitionDetailsDateContainer, ExhibitionDetailsTitle, ExhibitionDetailsText, ExternalExhibitionLink }
-  from '../styling/StyledExhibitionDetails'
+  from './ExhibitionDetailsStyled'
 
 export const ExhibitionDetails = () => {
 
@@ -16,6 +16,7 @@ export const ExhibitionDetails = () => {
   const [loading, setLoading] = useState(true)
   const [status, setStatus] = useState(null)
 
+  // move to thunk??
   const getExhibition = () => {
     fetch(EXHIBITION_URL)
       .then(res => {
@@ -49,8 +50,8 @@ export const ExhibitionDetails = () => {
 
   return (
     <>
-      {loading && <TailSpinLoader />}
-      {!loading && status &&
+      {loading && <LoaderContent />}
+      {!loading && status && // move out the below to ExhibitionDetailsContent?
         <>
           <BackContainer to='/exhibitions' >
             <BackIcon

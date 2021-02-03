@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { FooterContainer, FooterText } from '../styling/StyledFooter'
+import { FooterContainer, FooterText } from './FooterStyled'
 
-export const Footer = () => {
+export const FooterContent = () => {
   return (
     <FooterContainer>
       <FooterText>By Annika Melin</FooterText>

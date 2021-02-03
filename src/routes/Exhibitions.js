@@ -1,18 +1,18 @@
 import React from 'react'
 
-import { Header } from '../components/Header'
-import { ExhibitionFilter } from '../components/ExhibitionFilter'
-import { ExhibitionList } from '../components/ExhibitionList'
-import { Footer } from '../components/Footer'
-import { MainContainer } from '../styling/StyledRoutes'
+import { HeaderContent } from '../components/Header/HeaderContent'
+import { ExhibitionFilter } from '../components/ExhibitionFilter/ExhibitionFilter'
+import { ExhibitionList } from '../components/ExhibitionList/ExhibitionList'
+import { FooterContent } from '../components/Footer/FooterContent'
+import { MainContainer } from './RoutesStyled'
 
 export const Exhibitions = () => {
   return (
     <MainContainer>
-      <Header />
+      <HeaderContent />
       <ExhibitionFilter />
       <ExhibitionList />
-      <Footer />
+      <FooterContent />
     </MainContainer>
   )
 }

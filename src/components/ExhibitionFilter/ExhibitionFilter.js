@@ -1,12 +1,14 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { exhibitions } from '../reducers/exhibitions'
-import { FilterContainer, FilterButton } from '../styling/StyledExhibitionList'
+import { exhibitions } from '../../reducers/exhibitions'
+import { FilterContainer, FilterButton } from './ExhibitionFilterStyled'
 
 export const ExhibitionFilter = () => {
 
   const dispatch = useDispatch()
+
+  const exhibitionList = useSelector(store => store.exhibitions.allExhibitions)
 
   const filters = ['Past', 'Ongoing', 'Future']
 
@@ -15,12 +17,12 @@ export const ExhibitionFilter = () => {
   const activeFilter = useSelector(store => store.exhibitions.activeFilter)
 
   const updateFilter = (filter) => {
-    dispatch(exhibitions.actions.updateExhibitionFilter(filter))
+    dispatch(exhibitions.actions.filterExhibitions({ exhibitions: exhibitionList, filter }))
   }
 
   return (
     <>
-      {status && !loading &&
+      {status && !loading && // move out the below to ExhibitionFilterContent?
         < FilterContainer >
           {filters.map(filter => {
             return <FilterButton key={filter}

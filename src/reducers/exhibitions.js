@@ -5,40 +5,22 @@ export const exhibitions = createSlice({
   initialState: {
     allExhibitions: [],
     displayedExhibitions: [],
-    detailedExhibition: {},
     activeFilter: 'Ongoing',
     status: true,
     loading: true
   },
   reducers: {
-    initializeExhibitions: (state, action) => {
-      state.allExhibitions = action.payload
-
-      const exhibitions = state.allExhibitions
+    filterExhibitions: (state, action) => {
+      const { exhibitions, filter } = action.payload
       const today = new Date(Date.now())
 
-      const filteredExhibitions = exhibitions.filter(exhibition => {
-        return (new Date(exhibition.startDate) <= today &&
-          new Date(exhibition.endDate) >= today)
-      })
+      if (state.allExhibitions.length === 0) {
+        state.allExhibitions = exhibitions
+      } else {
+        state.activeFilter = filter
+      }
 
-      const sortedExhibitions = filteredExhibitions.sort((a, b) => {
-        return new Date(b.endDate) - new Date(a.endDate)
-      })
-
-      state.displayedExhibitions = sortedExhibitions
-    },
-    updateExhibitionFilter: (state, action) => {
-      state.activeFilter = action.payload
-
-      // console.log(state.allExhibitions)
-      // console.log(JSON.stringify(state.allExhibitions))
-      // console.log(JSON.parse(JSON.stringify(state.allExhibitions)))
-
-      const filter = action.payload
-      const exhibitions = JSON.parse(JSON.stringify(state.allExhibitions)) // why??
-      const today = new Date(Date.now())
-
+      // match the below on yymmdd and not mmss prob
       const filteredExhibitions = exhibitions.filter(exhibition => {
         if (filter === 'Ongoing') {
           return (new Date(exhibition.startDate) <= today &&

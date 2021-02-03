@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import { exhibitions } from './reducers/exhibitions'
@@ -7,12 +7,16 @@ import { Exhibitions } from './routes/Exhibitions'
 import { Exhibition } from './routes/Exhibition'
 import { AboutUs } from './routes/AboutUs'
 import { NotFound } from './routes/NotFound'
+import { Admin } from './routes/Admin'
 
 export const Main = () => {
 
   const dispatch = useDispatch()
   const EXHIBITIONS_URL = 'https://final-project-curated.herokuapp.com/exhibitions'
 
+  const filter = useSelector(store => store.exhibitions.activeFilter)
+
+  // move to thunk??
   const getExhibitions = () => {
     fetch(EXHIBITIONS_URL)
       .then(res => {
@@ -24,7 +28,7 @@ export const Main = () => {
           day: 'numeric', month: 'short', year: 'numeric'
         }
         const exhibitionList =
-          json.map(exhibition => {
+          json.map(exhibition => { // use date from backend - preserve until presented, no need to create this new object
             return {
               id: exhibition._id,
               title: exhibition.title,
@@ -36,7 +40,7 @@ export const Main = () => {
               museum: exhibition.museum
             }
           })
-        dispatch(exhibitions.actions.initializeExhibitions(exhibitionList))
+        dispatch(exhibitions.actions.filterExhibitions({ exhibitions: exhibitionList, filter }))
       })
       .catch(err => {
         dispatch(exhibitions.actions.setStatus(false))
@@ -62,6 +66,9 @@ export const Main = () => {
         </Route>
         <Route exact path='/about-us'>
           <AboutUs />
+        </Route>
+        <Route exact path='/admin'>
+          <Admin />
         </Route>
         <Route>
           <NotFound />

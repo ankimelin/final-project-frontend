@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { ExhibitionLink, ExhibitionCardContainer, ExhibitionCardTitle, ExhibitionCardText, ExhibitionCardDateContainer }
-  from '../styling/StyledExhibitionCard'
+  from './ExhibitionCardStyled'
 
-export const ExhibitionCard = ({ filter, ...exhibition }) => {
+export const ExhibitionCardContent = ({ filter, ...exhibition }) => {
   return (
     <ExhibitionLink to={`/exhibitions/${exhibition.id}`}>
       <ExhibitionCardContainer>

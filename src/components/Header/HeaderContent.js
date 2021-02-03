@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { MenuContainer, MenuLink, TitleContainer, TitleText } from '../styling/StyledHeader'
+import { MenuContainer, MenuLink, TitleContainer, TitleText } from './HeaderStyled'
 
-export const Header = () => {
+export const HeaderContent = () => {
   return (
     <>
       <MenuContainer>
