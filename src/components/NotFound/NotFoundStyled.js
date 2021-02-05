@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const NotFoundContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,9 +18,10 @@ export const NotFoundContainer = styled.div`
   }
   `
 
-export const NotFoundText = styled.p`
+export const Text = styled.p`
   margin: 0;
   margin-bottom: 10px;
+  text-align: center;
   font-size: 20px;
   font-family: 'Nothing You Could Do', cursive;
 

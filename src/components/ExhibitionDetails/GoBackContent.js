@@ -1,9 +1,8 @@
 import React from 'react'
 
-import { BackContainer, BackIcon } from './LinkBackStyled'
+import { BackContainer, BackIcon } from './GoBackStyled'
 
-export const LinkBackContent = () => {
-
+export const GoBackContent = () => {
   return (
     <BackContainer to='/exhibitions'>
       <BackIcon

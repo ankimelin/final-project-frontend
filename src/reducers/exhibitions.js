@@ -8,7 +8,9 @@ export const exhibitions = createSlice({
     detailedExhibition: {},
     activeFilter: 'Ongoing',
     status: true,
-    loading: true
+    loading: true,
+    activeAdmin: false,
+    exhibitionDeleted: false
   },
   reducers: {
     filterExhibitions: (state, action) => {
@@ -42,7 +44,14 @@ export const exhibitions = createSlice({
         } else return null
       })
 
-      state.displayedExhibitions = sortedExhibitions
+      if (filter === 'all') {
+        const adminExhibitions = exhibitions.sort((a, b) => {
+          return b.endDate - a.endDate
+        })
+        state.displayedExhibitions = adminExhibitions
+      } else {
+        state.displayedExhibitions = sortedExhibitions
+      }
     },
     setDetailedExhibition: (state, action) => {
       state.detailedExhibition = action.payload
@@ -52,6 +61,12 @@ export const exhibitions = createSlice({
     },
     setLoading: (state, action) => {
       state.loading = action.payload
+    },
+    setActiveAdmin: (state, action) => {
+      state.activeAdmin = action.payload
+    },
+    setExhibitionDeleted: (state, action) => {
+      state.exhibitionDeleted = action.payload
     }
   }
 })

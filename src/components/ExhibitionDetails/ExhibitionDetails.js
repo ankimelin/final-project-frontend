@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 import { getExhibition } from '../../reducers/thunks'
 import { LoaderContent } from '../Loader/LoaderContent'
-import { LinkBackContent } from './LinkBackContent'
+import { GoBackContent } from './GoBackContent'
 import { ExhibitionDetailsContent } from './ExhibitionDetailsContent'
 import { NotFoundContent } from '../NotFound/NotFoundContent'
 
@@ -16,11 +16,11 @@ export const ExhibitionDetails = () => {
   const loading = useSelector(store => store.exhibitions.loading)
   const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
 
-  const getDetailedExhibition = () => {
+  const getOneExhibition = () => {
     dispatch(getExhibition(exhibitionId))
   }
 
-  useEffect(getDetailedExhibition, [])
+  useEffect(getOneExhibition, [])
 
   return (
     <>
@@ -28,7 +28,7 @@ export const ExhibitionDetails = () => {
         < LoaderContent />}
       {status && !loading &&
         <>
-          <LinkBackContent />
+          <GoBackContent />
           <ExhibitionDetailsContent {...exhibition} />
         </>}
       {

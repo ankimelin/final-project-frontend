@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { exhibitions } from '../../reducers/exhibitions'
-import { NotFoundContainer, NotFoundText, ExhibitionsLink } from './NotFoundStyled'
+import { Container, Text, ExhibitionsLink } from './NotFoundStyled'
 
 export const NotFoundContent = () => {
 
@@ -17,9 +17,9 @@ export const NotFoundContent = () => {
   useEffect(updateFilter, [])
 
   return (
-    <NotFoundContainer>
-      <NotFoundText>Something went wrong.</NotFoundText>
+    <Container>
+      <Text>Something went wrong.</Text>
       <ExhibitionsLink to='/'>Go back to exhibitions{'>>'}</ExhibitionsLink>
-    </NotFoundContainer>
+    </Container>
   )
 }

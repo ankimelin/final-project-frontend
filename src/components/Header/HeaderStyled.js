@@ -66,6 +66,10 @@ export const TitleText = styled.h1`
   font-family: 'Varela', sans-serif;
   font-weight: 400;
 
+  &.admin {
+    color: #FD21A5;
+  }
+
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 64px;
   }

@@ -3,19 +3,18 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getExhibitions } from '../../reducers/thunks'
 import { LoaderContent } from '../Loader/LoaderContent'
-import { ExhibitionFilterList } from './ExhibitionFilterList'
-import { ExhibitionListContent } from './ExhibitionListContent'
+import { AddExhibitionButton } from './AddExhibitionButton'
+import { ExhibitionListContent } from '../ExhibitionList/ExhibitionListContent'
 import { NotFoundContent } from '../NotFound/NotFoundContent'
 
-export const ExhibitionList = () => {
+export const AdminExhibitionList = () => {
 
   const dispatch = useDispatch()
-  const filter = useSelector(store => store.exhibitions.activeFilter)
   const status = useSelector(store => store.exhibitions.status)
   const loading = useSelector(store => store.exhibitions.loading)
 
   const getAllExhibitions = () => {
-    dispatch(getExhibitions(filter))
+    dispatch(getExhibitions('all'))
   }
 
   useEffect(getAllExhibitions, [])
@@ -25,10 +24,14 @@ export const ExhibitionList = () => {
       {status && loading &&
         <LoaderContent />}
       {status && !loading &&
-        <><ExhibitionFilterList />
-          <ExhibitionListContent /></>}
-      {!status &&
-        <NotFoundContent />}
+        <>
+          <AddExhibitionButton />
+          < ExhibitionListContent />
+        </>}
+      {
+        !status &&
+        <NotFoundContent />
+      }
     </>
   )
 }

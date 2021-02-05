@@ -4,6 +4,7 @@ export const FilterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 25px;
   border-bottom: solid 1px #FD21A5;
   height: 25px;
 

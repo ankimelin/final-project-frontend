@@ -124,3 +124,22 @@ export const ExhibitionCardText = styled.p`
     }
   }
 `
+
+export const ExhibitionCardButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`
+
+export const DeleteLink = styled(Link)`
+  margin: 20px 0 0 0;
+  padding: 10px;
+  border: 1px dashed black;
+  background-color: #F9F9F9;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif; 
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+`
+

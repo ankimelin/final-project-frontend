@@ -3,18 +3,18 @@ import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../reducers/exhibitions'
 import { Header } from '../components/Header/Header'
-import { ExhibitionDetails } from '../components/ExhibitionDetails/ExhibitionDetails'
+import { AdminExhibitionList } from '../components/Admin/AdminExhibitionList'
 import { FooterContent } from '../components/Footer/FooterContent'
 import { MainContainer } from './RoutesStyled'
 
-export const Exhibition = () => {
+export const AdminExhibitions = () => {
 
   // move out
 
   const dispatch = useDispatch()
 
   const activateAdmin = () => {
-    dispatch(exhibitions.actions.setActiveAdmin(false))
+    dispatch(exhibitions.actions.setActiveAdmin(true))
   }
 
   useEffect(activateAdmin, [])
@@ -22,8 +22,8 @@ export const Exhibition = () => {
   return (
     <MainContainer>
       <Header />
-      <ExhibitionDetails />
+      <AdminExhibitionList />
       <FooterContent />
-    </MainContainer>
+    </MainContainer >
   )
 }

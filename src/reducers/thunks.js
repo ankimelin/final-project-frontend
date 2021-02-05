@@ -5,6 +5,7 @@ export const getExhibitions = (filter) => {
     dispatch(exhibitions.actions.setStatus(true))
     dispatch(exhibitions.actions.setLoading(true))
     dispatch(exhibitions.actions.setDetailedExhibition(null))
+    dispatch(exhibitions.actions.setExhibitionDeleted(false))
     const EXHIBITIONS_URL = 'https://final-project-curated.herokuapp.com/exhibitions'
     fetch(EXHIBITIONS_URL)
       .then(res => {
@@ -37,11 +38,11 @@ export const getExhibitions = (filter) => {
   }
 }
 
-export const getExhibition = (exhibitionId) => {
+export const getExhibition = (id) => {
   return (dispatch) => {
     dispatch(exhibitions.actions.setStatus(true))
     dispatch(exhibitions.actions.setLoading(true))
-    const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${exhibitionId}`
+    const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
     fetch(EXHIBITION_URL)
       .then(res => {
         dispatch(exhibitions.actions.setStatus(res.ok))
@@ -64,6 +65,31 @@ export const getExhibition = (exhibitionId) => {
           imageText: json.imageText
         }
         dispatch(exhibitions.actions.setDetailedExhibition(exhibitionListed))
+      })
+      .catch(err => {
+        dispatch(exhibitions.actions.setStatus(false))
+      })
+      .finally(() => {
+        dispatch(exhibitions.actions.setLoading(false))
+      })
+  }
+}
+
+export const deleteExhibition = (id) => {
+  return (dispatch) => {
+    dispatch(exhibitions.actions.setStatus(true))
+    dispatch(exhibitions.actions.setLoading(true))
+    const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
+    fetch(EXHIBITION_URL, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application-json' }
+    })
+      .then(res => {
+        dispatch(exhibitions.actions.setStatus(res.ok))
+        return res.json()
+      })
+      .then(json => {
+        dispatch(exhibitions.actions.setExhibitionDeleted(true))
       })
       .catch(err => {
         dispatch(exhibitions.actions.setStatus(false))

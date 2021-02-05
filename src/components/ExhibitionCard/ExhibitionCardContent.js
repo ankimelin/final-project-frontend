@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import { ExhibitionLink, ExhibitionCardContainer, ExhibitionCardTitle, ExhibitionCardText, ExhibitionCardDateContainer }
   from './ExhibitionCardStyled'
 
-export const ExhibitionCardContent = ({ filter, ...exhibition }) => {
+export const ExhibitionCardContent = ({ ...exhibition }) => {
+
+  const filter = useSelector(store => store.exhibitions.activeFilter)
 
   return (
     <ExhibitionLink to={`/exhibitions/${exhibition.id}`}>
