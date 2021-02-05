@@ -4,6 +4,7 @@ import { ExhibitionLink, ExhibitionCardContainer, ExhibitionCardTitle, Exhibitio
   from './ExhibitionCardStyled'
 
 export const ExhibitionCardContent = ({ filter, ...exhibition }) => {
+
   return (
     <ExhibitionLink to={`/exhibitions/${exhibition.id}`}>
       <ExhibitionCardContainer>
@@ -15,10 +16,10 @@ export const ExhibitionCardContent = ({ filter, ...exhibition }) => {
           {filter === 'Ongoing' ?
             <ExhibitionCardText className='until'>Until</ExhibitionCardText> :
             <>
-              <ExhibitionCardText className='date'>{exhibition.startDate}</ExhibitionCardText>
+              <ExhibitionCardText className='date'>{new Date(exhibition.startDate).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}</ExhibitionCardText>
               <ExhibitionCardText className='space'>-</ExhibitionCardText>
             </>}
-          <ExhibitionCardText className='date'>{exhibition.endDate}</ExhibitionCardText>
+          <ExhibitionCardText className='date'>{new Date(exhibition.endDate).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })}</ExhibitionCardText>
         </ExhibitionCardDateContainer>
         <ExhibitionCardText className='museum'>{exhibition.museum}</ExhibitionCardText>
       </ExhibitionCardContainer>

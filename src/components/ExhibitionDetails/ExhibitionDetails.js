@@ -1,61 +1,40 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
+import { getExhibition } from '../../reducers/thunks'
 import { LoaderContent } from '../Loader/LoaderContent'
+import { LinkBackContent } from './LinkBackContent'
 import { ExhibitionDetailsContent } from './ExhibitionDetailsContent'
 import { NotFoundContent } from '../NotFound/NotFoundContent'
 
 export const ExhibitionDetails = () => {
+
+  const dispatch = useDispatch()
   const { exhibitionId } = useParams()
-  const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${exhibitionId}`
+  const status = useSelector(store => store.exhibitions.status)
+  const loading = useSelector(store => store.exhibitions.loading)
+  const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
 
-  const [exhibition, setExhibition] = useState({})
-  const [loading, setLoading] = useState(true)
-  const [status, setStatus] = useState(null)
-
-  // move to thunk??
-  const getExhibition = () => {
-    fetch(EXHIBITION_URL)
-      .then(res => {
-        setStatus(res.ok)
-        return res.json()
-      })
-      .then(json => {
-        const options = {
-          day: 'numeric', month: 'short', year: 'numeric'
-        }
-        const exhibitionListed = {
-          id: json._id,
-          title: json.title,
-          artists: json.artists,
-          startDate: new Date(json.startDate).toLocaleDateString('en-US', options),
-          endDate: new Date(json.endDate).toLocaleDateString('en-US', options),
-          museum: json.museum,
-          link: json.link
-        }
-        setExhibition(exhibitionListed)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.log(err)
-        setStatus(false)
-        setLoading(false)
-      })
+  const getDetailedExhibition = () => {
+    dispatch(getExhibition(exhibitionId))
   }
 
-  useEffect(getExhibition, [])
+  useEffect(getDetailedExhibition, [])
 
   return (
     <>
-      {loading &&
-        <LoaderContent />}
-      {!loading && status &&
-        <ExhibitionDetailsContent
-          key={exhibition.id}
-          {...exhibition}
-        />}
-      {!loading && !status &&
-        <NotFoundContent />}
+      {status && loading &&
+        < LoaderContent />}
+      {status && !loading &&
+        <>
+          <LinkBackContent />
+          <ExhibitionDetailsContent {...exhibition} />
+        </>}
+      {
+        !status &&
+        <NotFoundContent />
+      }
     </>
   )
 }

@@ -1,62 +1,47 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-
-export const BackContainer = styled(Link)`
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-  height: 50px;
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    margin-left: 100px;
-    height: 100px;
-  }
-  
-  @media (min-width: 1024px) {
-    margin-left: 300px;
-    height: 100px;
-  }
-`
-
-export const BackIcon = styled.img`
-  margin: 0;
-  padding: 0;
-  height: 25px;
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    height: 35px;
-  }
-  
-  @media (min-width: 1024px) {
-    height: 35px;
-  }
-`
 
 export const ExhibitionDetailsContainer = styled.div`
-  margin-bottom: 25px; 
   padding: 0 25px 75px 25px;
   text-align: center;
   color: black;
 
-  media (min-width: 768px) and (max-width: 1023px) {
-    padding: 0 50px 100px 50px;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding: 0 100px 100px 100px;
   }
   
   @media (min-width: 1024px) {
-    padding: 0 50px 100px 50px;
+    padding: 0 300px 100px 300px;
   }
 `
 
 export const ExhibitionDetailsImage = styled.img`
-  height: 200px;
-  margin-bottom: 25px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    height: 300px;
+    width: 100%;
   }
   
   @media (min-width: 1024px) {
-    height: 300px;
+    width: 100%;
+  }
+`
+export const ExhibitionDetailsImageText = styled.p`
+  margin: 0 0 25px 0;
+  padding: 0;
+  width: 100%;
+  font-size: 10px;
+  text-align: left;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    margin: 0 0 50px 0;
+    font-size: 14px;
+  }
+  
+  @media (min-width: 1024px) {
+    margin: 0 0 50px 0;
+    font-size: 14px;
   }
 `
 

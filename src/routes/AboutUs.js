@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { HeaderContent } from '../components/Header/HeaderContent'
+import { Header } from '../components/Header/Header'
 import { AboutContent } from '../components/AboutUs/AboutContent'
 import { FooterContent } from '../components/Footer/FooterContent'
 
 export const AboutUs = () => {
   return (
     <>
-      <HeaderContent />
+      <Header />
       <AboutContent />
       <FooterContent />
     </>

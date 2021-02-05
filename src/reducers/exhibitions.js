@@ -5,6 +5,7 @@ export const exhibitions = createSlice({
   initialState: {
     allExhibitions: [],
     displayedExhibitions: [],
+    detailedExhibition: {},
     activeFilter: 'Ongoing',
     status: true,
     loading: true
@@ -12,7 +13,7 @@ export const exhibitions = createSlice({
   reducers: {
     filterExhibitions: (state, action) => {
       const { exhibitions, filter } = action.payload
-      const today = new Date(Date.now())
+      const today = new Date().setHours(0, 0, 0, 0)
 
       if (state.allExhibitions.length === 0) {
         state.allExhibitions = exhibitions
@@ -20,23 +21,24 @@ export const exhibitions = createSlice({
         state.activeFilter = filter
       }
 
-      // match the below on yymmdd and not mmss prob
       const filteredExhibitions = exhibitions.filter(exhibition => {
         if (filter === 'Ongoing') {
-          return (new Date(exhibition.startDate) <= today &&
-            new Date(exhibition.endDate) >= today)
+          return exhibition.startDate <= today &&
+            exhibition.endDate >= today
         } else if (filter === 'Future') {
-          return (new Date(exhibition.startDate) > today)
+          return exhibition.startDate > today
         } else if (filter === 'Past') {
-          return (new Date(exhibition.endDate) < today)
+          return exhibition.endDate < today
         } else return null
       })
 
       const sortedExhibitions = filteredExhibitions.sort((a, b) => {
-        if (filter === 'Ongoing' || 'Past') {
-          return new Date(b.endDate) - new Date(a.endDate)
+        if (filter === 'Ongoing') {
+          return a.endDate - b.endDate
+        } else if (filter === 'Past') {
+          return b.endDate - a.endDate
         } else if (filter === 'Future') {
-          return new Date(a.startDate) - new Date(b.startDate)
+          return a.startDate - b.startDate
         } else return null
       })
 
@@ -49,7 +51,7 @@ export const exhibitions = createSlice({
       state.status = action.payload
     },
     setLoading: (state, action) => {
-      state.loading = action.payled
+      state.loading = action.payload
     }
   }
 })

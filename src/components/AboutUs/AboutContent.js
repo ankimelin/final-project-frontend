@@ -6,12 +6,14 @@ import { AboutContainer, AboutText } from './AboutStyled'
 
 export const AboutContent = () => {
 
-  // move out?
+  // move out the below, to reusable..?
   const dispatch = useDispatch()
   const exhibitionList = useSelector(store => store.exhibitions.allExhibitions)
+
   const updateFilter = () => {
     dispatch(exhibitions.actions.filterExhibitions({ exhibitions: exhibitionList, filter: 'Ongoing' }))
   }
+
   useEffect(updateFilter, [])
 
   return (
