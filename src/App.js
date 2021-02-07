@@ -8,6 +8,8 @@ import { Exhibitions } from './routes/Exhibitions'
 import { Exhibition } from './routes/Exhibition'
 import { AboutUs } from './routes/AboutUs'
 import { AdminExhibitions } from './routes/AdminExhibitions'
+import { AdminAdd } from './routes/AdminAdd'
+import { AdminUpdate } from './routes/AdminUpdate'
 import { AdminDelete } from './routes/AdminDelete'
 import { NotFound } from './routes/NotFound'
 
@@ -40,11 +42,20 @@ export const App = () => {
           <Route exact path='/admin/exhibitions'>
             <AdminExhibitions />
           </Route>
+          <Route exact path='/admin/exhibitions/add'>
+            <AdminAdd />
+          </Route>
+          <Route exact path='/admin/exhibitions/:exhibitionId/update'>
+            <AdminUpdate />
+          </Route>
           <Route exact path='/admin/exhibitions/:exhibitionId/delete'>
             <AdminDelete />
           </Route>
-          <Route>
+          <Route exact path='/not-found'>
             <NotFound />
+          </Route>
+          <Route >
+            <Redirect to='/not-found' />
           </Route>
         </Switch>
       </Router>

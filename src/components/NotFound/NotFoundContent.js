@@ -1,20 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 
-import { exhibitions } from '../../reducers/exhibitions'
 import { Container, Text, ExhibitionsLink } from './NotFoundStyled'
 
 export const NotFoundContent = () => {
-
-  // move out??
-  const dispatch = useDispatch()
-  const exhibitionList = useSelector(store => store.exhibitions.allExhibitions)
-
-  const updateFilter = () => {
-    dispatch(exhibitions.actions.filterExhibitions({ exhibitions: exhibitionList, filter: 'Ongoing' }))
-  }
-
-  useEffect(updateFilter, [])
 
   return (
     <Container>

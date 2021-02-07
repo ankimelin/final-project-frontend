@@ -9,8 +9,10 @@ export const exhibitions = createSlice({
     activeFilter: 'Ongoing',
     status: true,
     loading: true,
+    loadingOne: true,
     activeAdmin: false,
-    exhibitionDeleted: false
+    exhibitionDeleted: false,
+    exhibitionAdded: false
   },
   reducers: {
     filterExhibitions: (state, action) => {
@@ -56,17 +58,26 @@ export const exhibitions = createSlice({
     setDetailedExhibition: (state, action) => {
       state.detailedExhibition = action.payload
     },
+    setActiveFilter: (state, action) => {
+      state.activeFilter = action.payload
+    },
     setStatus: (state, action) => {
       state.status = action.payload
     },
     setLoading: (state, action) => {
       state.loading = action.payload
     },
+    setLoadingOne: (state, action) => {
+      state.loadingOne = action.payload
+    },
     setActiveAdmin: (state, action) => {
       state.activeAdmin = action.payload
     },
     setExhibitionDeleted: (state, action) => {
       state.exhibitionDeleted = action.payload
+    },
+    setExhibitionAdded: (state, action) => {
+      state.exhibitionAdded = action.payload
     }
   }
 })

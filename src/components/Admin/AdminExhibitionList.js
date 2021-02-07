@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getExhibitions } from '../../reducers/thunks'
 import { LoaderContent } from '../Loader/LoaderContent'
-import { AddExhibitionButton } from './AddExhibitionButton'
+import { AddExhibitionLink } from './Add/AddExhibitionLink'
 import { ExhibitionListContent } from '../ExhibitionList/ExhibitionListContent'
-import { NotFoundContent } from '../NotFound/NotFoundContent'
+import { AdminNotFound } from './AdminNotFound'
 
 export const AdminExhibitionList = () => {
 
@@ -25,12 +25,12 @@ export const AdminExhibitionList = () => {
         <LoaderContent />}
       {status && !loading &&
         <>
-          <AddExhibitionButton />
-          < ExhibitionListContent />
+          <AddExhibitionLink />
+          <ExhibitionListContent />
         </>}
       {
         !status &&
-        <NotFoundContent />
+        <AdminNotFound />
       }
     </>
   )

@@ -9,14 +9,14 @@ import { MainContainer } from './RoutesStyled'
 
 export const Exhibitions = () => {
 
-  //move out
   const dispatch = useDispatch()
 
-  const activateAdmin = () => {
+  const clearStates = () => {
     dispatch(exhibitions.actions.setActiveAdmin(false))
+    dispatch(exhibitions.actions.setLoadingOne(true))
   }
 
-  useEffect(activateAdmin, [])
+  useEffect(clearStates, [])
 
   return (
     <MainContainer>

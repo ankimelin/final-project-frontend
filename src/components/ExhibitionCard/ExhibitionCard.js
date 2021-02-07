@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionCardContent } from './ExhibitionCardContent'
-import { ExhibitionCardAdmin } from './ExhibitionCardAdmin'
+import { AdminExhibitionCardContent } from '../Admin/AdminExhibitionCardContent'
 
 export const ExhibitionCard = ({ ...exhibition }) => {
 
@@ -14,7 +14,7 @@ export const ExhibitionCard = ({ ...exhibition }) => {
         <ExhibitionCardContent
           {...exhibition} />}
       {admin &&
-        <ExhibitionCardAdmin
+        <AdminExhibitionCardContent
           {...exhibition} />}
     </>
   )

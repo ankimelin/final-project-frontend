@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { UpdateExhibitionButton } from '../Admin/UpdateExhibitionButton'
+import { UpdateExhibitionButton } from './Update/UpdateExhibitionButton'
 import { ExhibitionCardContainer, ExhibitionCardTitle, ExhibitionCardText, ExhibitionCardDateContainer, ExhibitionCardButtonContainer, DeleteLink }
-  from './ExhibitionCardStyled'
+  from '../ExhibitionCard/ExhibitionCardStyled'
 
-export const ExhibitionCardAdmin = ({ ...exhibition }) => {
+export const AdminExhibitionCardContent = ({ ...exhibition }) => {
 
   return (
     <ExhibitionCardContainer>
@@ -19,7 +19,7 @@ export const ExhibitionCardAdmin = ({ ...exhibition }) => {
       </ExhibitionCardDateContainer>
       <ExhibitionCardText className='museum'>{exhibition.museum}</ExhibitionCardText>
       <ExhibitionCardButtonContainer>
-        <UpdateExhibitionButton />
+        <DeleteLink to={`/admin/exhibitions/${exhibition.id}/update`}>Update Exhibition</DeleteLink>
         <DeleteLink to={`/admin/exhibitions/${exhibition.id}/delete`}>Delete Exhibition</DeleteLink>
       </ExhibitionCardButtonContainer>
     </ExhibitionCardContainer>

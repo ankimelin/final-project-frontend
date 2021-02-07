@@ -2,9 +2,9 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
-import { deleteExhibition } from '../../reducers/thunks'
-import { Button } from './AdminStyled'
-import { Text, ExhibitionsLink } from '../NotFound/NotFoundStyled'
+import { deleteExhibition } from '../../../reducers/thunks'
+import { Button } from '../AdminStyled'
+import { Text, ExhibitionsLink } from '../../NotFound/NotFoundStyled'
 
 export const DeleteExhibitionQuestion = ({ ...exhibition }) => {
 

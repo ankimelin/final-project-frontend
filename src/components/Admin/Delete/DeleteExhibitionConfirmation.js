@@ -1,7 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
-import { Text, ExhibitionsLink } from '../NotFound/NotFoundStyled'
+import { Text, ExhibitionsLink } from '../../NotFound/NotFoundStyled'
 
 export const DeleteExhibitionConfirmation = ({ ...exhibition }) => {
 

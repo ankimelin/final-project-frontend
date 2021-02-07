@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import { exhibitions } from '../../reducers/exhibitions'
-import { ButtonContainer, Button } from './AdminStyled'
+import { exhibitions } from '../../../reducers/exhibitions'
+import { LinkContainer, Button } from '../AdminStyled'
 
 export const UpdateExhibitionButton = () => {
 
@@ -13,8 +13,8 @@ export const UpdateExhibitionButton = () => {
   }
 
   return (
-    <ButtonContainer className='update'>
+    <LinkContainer className='update'>
       <Button className='update' onClick={() => updateExhibition()}>Update Exhibition</Button>
-    </ButtonContainer>
+    </LinkContainer>
   )
 }

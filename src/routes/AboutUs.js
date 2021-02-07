@@ -8,15 +8,17 @@ import { FooterContent } from '../components/Footer/FooterContent'
 
 export const AboutUs = () => {
 
-  // move out
-
+  // move out??
   const dispatch = useDispatch()
 
-  const activateAdmin = () => {
+  const clearStates = () => {
     dispatch(exhibitions.actions.setActiveAdmin(false))
+    dispatch(exhibitions.actions.setLoading(true))
+    dispatch(exhibitions.actions.setLoadingOne(true))
+    dispatch(exhibitions.actions.setActiveFilter('Ongoing'))
   }
 
-  useEffect(activateAdmin, [])
+  useEffect(clearStates, [])
 
   return (
     <>

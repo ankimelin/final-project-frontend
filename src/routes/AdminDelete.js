@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../reducers/exhibitions'
 import { Header } from '../components/Header/Header'
-import { DeleteExhibition } from '../components/Admin/DeleteExhibition'
+import { DeleteExhibition } from '../components/Admin/Delete/DeleteExhibition'
 import { FooterContent } from '../components/Footer/FooterContent'
 import { MainContainer } from './RoutesStyled'
 
@@ -15,6 +15,7 @@ export const AdminDelete = () => {
 
   const activateAdmin = () => {
     dispatch(exhibitions.actions.setActiveAdmin(true))
+    dispatch(exhibitions.actions.setLoading(true))
   }
 
   useEffect(activateAdmin, [])

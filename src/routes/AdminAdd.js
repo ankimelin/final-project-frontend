@@ -3,27 +3,27 @@ import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../reducers/exhibitions'
 import { Header } from '../components/Header/Header'
-import { AdminExhibitionList } from '../components/Admin/AdminExhibitionList'
+import { AddExhibition } from '../components/Admin/Add/AddExhibition'
 import { FooterContent } from '../components/Footer/FooterContent'
 import { MainContainer } from './RoutesStyled'
 
-export const AdminExhibitions = () => {
+export const AdminAdd = () => {
+
+  // move out
 
   const dispatch = useDispatch()
 
-  const clearStates = () => {
+  const activateAdmin = () => {
     dispatch(exhibitions.actions.setActiveAdmin(true))
-    dispatch(exhibitions.actions.setLoadingOne(true))
-    dispatch(exhibitions.actions.setExhibitionDeleted(false))
-    dispatch(exhibitions.actions.setExhibitionAdded(false))
+    dispatch(exhibitions.actions.setLoading(true))
   }
 
-  useEffect(clearStates, [])
+  useEffect(activateAdmin, [])
 
   return (
     <MainContainer>
       <Header />
-      <AdminExhibitionList />
+      <AddExhibition />
       <FooterContent />
     </MainContainer >
   )

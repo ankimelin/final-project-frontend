@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getExhibition } from '../../reducers/thunks'
+import { getExhibition } from '../../../reducers/thunks'
 import { DeleteExhibitionQuestion } from './DeleteExhibitionQuestion'
 import { DeleteExhibitionConfirmation } from './DeleteExhibitionConfirmation'
-import { Container } from '../NotFound/NotFoundStyled'
-import { LoaderContent } from '../Loader/LoaderContent'
-import { NotFoundContent } from '../NotFound/NotFoundContent'
+import { Container } from '../../NotFound/NotFoundStyled'
+import { LoaderContent } from '../../Loader/LoaderContent'
+import { AdminNotFound } from '../AdminNotFound'
 
 export const DeleteExhibition = () => {
 
   const dispatch = useDispatch()
   const { exhibitionId } = useParams()
   const status = useSelector(store => store.exhibitions.status)
-  const loading = useSelector(store => store.exhibitions.loading)
+  const loadingOne = useSelector(store => store.exhibitions.loadingOne)
   const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
   const exhibitionDeleted = useSelector(store => store.exhibitions.exhibitionDeleted)
 
@@ -26,13 +26,13 @@ export const DeleteExhibition = () => {
 
   return (
     <>
-      {status && loading && <LoaderContent />}
-      {status && !loading &&
+      {status && loadingOne && <LoaderContent />}
+      {status && !loadingOne &&
         <Container>
           {!exhibitionDeleted && <DeleteExhibitionQuestion {...exhibition} />}
           {exhibitionDeleted && <DeleteExhibitionConfirmation {...exhibition} />}
         </Container >}
-      {!status && <NotFoundContent />}
+      {!status && <AdminNotFound />}
     </>
   )
 }

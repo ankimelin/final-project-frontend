@@ -2,8 +2,8 @@ import { exhibitions } from './exhibitions'
 
 export const getExhibitions = (filter) => {
   return (dispatch) => {
-    dispatch(exhibitions.actions.setStatus(true))
     dispatch(exhibitions.actions.setLoading(true))
+    dispatch(exhibitions.actions.setStatus(true))
     dispatch(exhibitions.actions.setDetailedExhibition(null))
     dispatch(exhibitions.actions.setExhibitionDeleted(false))
     const EXHIBITIONS_URL = 'https://final-project-curated.herokuapp.com/exhibitions'
@@ -40,8 +40,8 @@ export const getExhibitions = (filter) => {
 
 export const getExhibition = (id) => {
   return (dispatch) => {
+    dispatch(exhibitions.actions.setLoadingOne(true))
     dispatch(exhibitions.actions.setStatus(true))
-    dispatch(exhibitions.actions.setLoading(true))
     const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
     fetch(EXHIBITION_URL)
       .then(res => {
@@ -70,7 +70,7 @@ export const getExhibition = (id) => {
         dispatch(exhibitions.actions.setStatus(false))
       })
       .finally(() => {
-        dispatch(exhibitions.actions.setLoading(false))
+        dispatch(exhibitions.actions.setLoadingOne(false))
       })
   }
 }
@@ -78,11 +78,10 @@ export const getExhibition = (id) => {
 export const deleteExhibition = (id) => {
   return (dispatch) => {
     dispatch(exhibitions.actions.setStatus(true))
-    dispatch(exhibitions.actions.setLoading(true))
+    dispatch(exhibitions.actions.setLoadingOne(true))
     const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
     fetch(EXHIBITION_URL, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application-json' }
+      method: 'DELETE'
     })
       .then(res => {
         dispatch(exhibitions.actions.setStatus(res.ok))
@@ -95,7 +94,37 @@ export const deleteExhibition = (id) => {
         dispatch(exhibitions.actions.setStatus(false))
       })
       .finally(() => {
-        dispatch(exhibitions.actions.setLoading(false))
+        dispatch(exhibitions.actions.setLoadingOne(false))
+      })
+  }
+}
+
+export const addExhibition = (title, museum, startDate, endDate, link, image, imageText) => {
+  console.log(JSON.stringify({ title, museum, startDate, endDate, link, image, imageText }))
+  return (dispatch) => {
+    dispatch(exhibitions.actions.setStatus(true))
+    dispatch(exhibitions.actions.setLoadingOne(true))
+    const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions`
+    fetch(EXHIBITION_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, museum, startDate, endDate, link, image, imageText })
+    })
+      .then(res => {
+        console.log(res.ok)
+        dispatch(exhibitions.actions.setStatus(res.ok))
+        return res.json()
+      })
+      .then(json => {
+        dispatch(exhibitions.actions.setExhibitionAdded(true))
+        console.log(json)
+      })
+      .catch(err => {
+        console.log(err)
+        dispatch(exhibitions.actions.setStatus(false))
+      })
+      .finally(() => {
+        dispatch(exhibitions.actions.setLoadingOne(false))
       })
   }
 }
