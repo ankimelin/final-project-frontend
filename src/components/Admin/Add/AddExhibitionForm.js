@@ -10,7 +10,6 @@ export const BackContainer = styled(Link)`
   align-items: center;
   margin-left: 25px;
   height: 50px;
-
   @media (min-width: 768px) and (max-width: 1023px) {
     margin-left: 100px;
     height: 100px;
@@ -26,7 +25,6 @@ export const BackIcon = styled.img`
   margin: 0;
   padding: 0;
   height: 25px;
-
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 35px;
   }
@@ -40,11 +38,9 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   padding: 0 25px 75px 25px;
-
   @media (min-width: 768px) and (max-width: 1023px) {
     padding: 75px 225px;
   }
-
   @media (min-width: 1024px) {
     padding: 75px 0;
     width: 400px;
@@ -54,13 +50,11 @@ export const FormContainer = styled.form`
 export const InputLabel = styled.label`
   margin: 0;
   padding: 15px 0 5px 10px;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Arial', sans-serif;
-
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 18px;
   }
-
   @media (min-width: 1024px) {
     font-size: 18px;
   }
@@ -73,16 +67,13 @@ export const InputArea = styled.input`
   height: 25px;
   font-size: 12px;  
   font-family: 'Roboto', sans-serif;
-
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 35px;
     font-size: 14px;
   }
-
   @media (min-width: 1024px) {
     height: 35px;
     font-size: 14px;
-
     &:focus {
       outline: 2px solid orange;  
     }
@@ -97,16 +88,13 @@ export const TextArea = styled.textarea`
   height: 50px;
   font-size: 12px;  
   font-family: 'Roboto', sans-serif;
-
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 100px;
     font-size: 14px;
   }
-
   @media (min-width: 1024px) {
     height: 100px;
     font-size: 14px;
-
     &:focus {
       outline: 2px solid orange;  
     }
@@ -119,29 +107,24 @@ export const QuestionButton = styled.button`
   border: none;
   width: 100%;
   background-color: black;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Arial', sans-serif;
   font-weight: 600;
   color: white;
-
   &.clear-button {
     background-color: #F9F9F9;
     color: black;
   }
-
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 18px;
   }
-
   @media (min-width: 1024px) {
     font-size: 18px;
-
     &:hover {
       background-color: #FD21A5;
       color: white;  
       cursor: pointer;
     }
-
     &:focus {
       outline: 2px solid orange;  ??
     }

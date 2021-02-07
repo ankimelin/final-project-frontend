@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { Header } from '../components/Header/Header'
-import { NotFoundContent } from '../components/NotFound/NotFoundContent'
-import { FooterContent } from '../components/Footer/FooterContent'
+import { HeaderContent } from '../components/HeaderContent'
+import { NotFoundContent } from '../components/NotFoundContent'
+import { FooterContent } from '../components/FooterContent'
 import { MainContainer } from './StyledRoutes'
 
 export const NotFound = () => {
   return (
     <MainContainer>
-      <Header />
+      <HeaderContent />
       <NotFoundContent />
       <FooterContent />
     </MainContainer>

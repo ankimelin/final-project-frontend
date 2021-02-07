@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../../reducers/exhibitions'
-import { Header } from '../../components/Header/Header'
+import { HeaderContent } from '../../components/HeaderContent'
 import { DeleteExhibition } from '../../components/Admin/Delete/DeleteExhibition'
-import { FooterContent } from '../../components/Footer/FooterContent'
+import { FooterContent } from '../../components/FooterContent'
 import { MainContainer } from '../StyledRoutes'
 
 export const Delete = () => {
@@ -20,7 +20,7 @@ export const Delete = () => {
 
   return (
     <MainContainer>
-      <Header />
+      <HeaderContent />
       <DeleteExhibition />
       <FooterContent />
     </MainContainer >

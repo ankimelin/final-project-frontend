@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { Container, Text, ExhibitionsLink } from '../NotFound/NotFoundStyled'
+import { MessageContainer, MessageText, ExhibitionsLink } from '../StyledComponents'
 
 export const NotFoundAdmin = () => {
   return (
-    <Container>
-      <Text>Something went wrong.</Text>
+    <MessageContainer>
+      <MessageText>Something went wrong.</MessageText>
       <ExhibitionsLink to='/admin'>Go back to exhibitions{'>>'}</ExhibitionsLink>
-    </Container>
+    </MessageContainer>
   )
 }

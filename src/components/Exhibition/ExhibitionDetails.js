@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import { getExhibition } from '../../reducers/thunks'
-import { LoaderContent } from '../Loader/LoaderContent'
+import { LoaderContent } from '../LoaderContent'
 import { GoBackContent } from './GoBackContent'
 import { ExhibitionDetailsContent } from './ExhibitionDetailsContent'
-import { NotFoundContent } from '../NotFound/NotFoundContent'
+import { NotFoundContent } from '../NotFoundContent'
 
 export const ExhibitionDetails = () => {
 

@@ -6,7 +6,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin: 25px;
-
 background-color: green;
 `
 
@@ -38,11 +37,9 @@ export const Button = styled.button`
   background-color:black;
   font-weight: 600;
   color: white;
-
   &:hover {
     cursor: pointer;
   }
-
 &.add {
   margin: 0;
   width: 100%;
@@ -50,15 +47,12 @@ export const Button = styled.button`
   background-color: black;
   color: white;
 }
-
   &.delete {
     margin-left: 20px;
   }
-
   &.update {
    
   }
-
   &.final-delete {
     margin: 5px 0 15px 0;
     border-style: none;
@@ -67,4 +61,3 @@ export const Button = styled.button`
     color: white;
   }
 `
-

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionFilterButton } from './ExhibitionFilterButton'
-import { FilterContainer } from './ExhibitionFilterStyled'
+import { FilterContainer } from '../StyledExhibitionList'
 
 export const ExhibitionFilterList = () => {
 
@@ -17,9 +17,7 @@ export const ExhibitionFilterList = () => {
           key={filter}
           exhibitionList={exhibitionList}
           activeFilter={activeFilter}
-          filter={filter}
-        />
-      )}
+          filter={filter} />)}
     </FilterContainer>
   )
 }

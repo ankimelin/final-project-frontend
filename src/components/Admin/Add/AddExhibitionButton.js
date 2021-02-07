@@ -2,7 +2,7 @@ import React from 'react'
 
 import { LinkContainer, Button } from '../StyledAdmin'
 
-export const AddExhibitionLink = () => {
+export const AddExhibitionButton = () => {
 
   return (
     <LinkContainer to={`/admin/exhibitions/add`}>

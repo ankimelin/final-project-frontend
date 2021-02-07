@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { Text, ExhibitionsLink } from '../../NotFound/NotFoundStyled'
+import { MessageText, ExhibitionsLink } from '../../StyledComponents'
 
 export const DeleteExhibitionConfirmation = ({ ...exhibition }) => {
 
   return (
     <>
-      <Text>{exhibition.title} deleted!</Text>
+      <MessageText>{exhibition.title} deleted!</MessageText>
       <ExhibitionsLink to='/admin/exhibitions'>Go back to exhibitions{'>>'}</ExhibitionsLink>
     </>
   )

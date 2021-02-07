@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { deleteExhibition } from '../../../reducers/thunks'
 import { Button } from '../StyledAdmin'
-import { Text, ExhibitionsLink } from '../../NotFound/NotFoundStyled'
+import { MessageText, ExhibitionsLink } from '../../StyledComponents'
 
 export const DeleteExhibitionQuestion = ({ ...exhibition }) => {
 
@@ -17,7 +17,7 @@ export const DeleteExhibitionQuestion = ({ ...exhibition }) => {
 
   return (
     <>
-      <Text>Are you sure you want to delete {exhibition.title}?</Text>
+      <MessageText>Are you sure you want to delete {exhibition.title}?</MessageText>
       <Button className='final-delete' onClick={() => deleteOneExhibition(exhibitionId)}>Delete exhibition</Button>
       <ExhibitionsLink to={'/admin/exhibitions'}>Go back to exhibitions {'>>'}</ExhibitionsLink>
     </>
