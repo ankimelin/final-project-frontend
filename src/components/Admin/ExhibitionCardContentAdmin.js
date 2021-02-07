@@ -4,7 +4,7 @@ import { UpdateExhibitionButton } from './Update/UpdateExhibitionButton'
 import { ExhibitionCardContainer, ExhibitionCardTitle, ExhibitionCardText, ExhibitionCardDateContainer, ExhibitionCardButtonContainer, DeleteLink }
   from '../ExhibitionCard/ExhibitionCardStyled'
 
-export const AdminExhibitionCardContent = ({ ...exhibition }) => {
+export const ExhibitionCardContentAdmin = ({ ...exhibition }) => {
 
   return (
     <ExhibitionCardContainer>

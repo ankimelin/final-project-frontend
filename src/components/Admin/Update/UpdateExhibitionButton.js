@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../../../reducers/exhibitions'
-import { LinkContainer, Button } from '../AdminStyled'
+import { LinkContainer, Button } from '../StyledAdmin'
 
 export const UpdateExhibitionButton = () => {
 

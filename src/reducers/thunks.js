@@ -2,10 +2,12 @@ import { exhibitions } from './exhibitions'
 
 export const getExhibitions = (filter) => {
   return (dispatch) => {
-    dispatch(exhibitions.actions.setLoading(true))
+    if (filter === 'all') {
+      dispatch(exhibitions.actions.setLoadingAllAdmin(true))
+    } else {
+      dispatch(exhibitions.actions.setLoadingAll(true))
+    }
     dispatch(exhibitions.actions.setStatus(true))
-    dispatch(exhibitions.actions.setDetailedExhibition(null))
-    dispatch(exhibitions.actions.setExhibitionDeleted(false))
     const EXHIBITIONS_URL = 'https://final-project-curated.herokuapp.com/exhibitions'
     fetch(EXHIBITIONS_URL)
       .then(res => {
@@ -15,7 +17,6 @@ export const getExhibitions = (filter) => {
       .then(json => {
         const exhibitionList =
           json.map(exhibition => {
-            // no need to create a new object in frontend..
             return {
               id: exhibition._id,
               title: exhibition.title,
@@ -33,7 +34,11 @@ export const getExhibitions = (filter) => {
         dispatch(exhibitions.actions.setStatus(false))
       })
       .finally(() => {
-        dispatch(exhibitions.actions.setLoading(false))
+        if (filter === 'all') {
+          dispatch(exhibitions.actions.setLoadingAllAdmin(false))
+        } else {
+          dispatch(exhibitions.actions.setLoadingAll(false))
+        }
       })
   }
 }
@@ -52,7 +57,6 @@ export const getExhibition = (id) => {
         const options = {
           day: 'numeric', month: 'short', year: 'numeric'
         }
-        // no need to create a new object in frontend..
         const exhibitionListed = {
           id: json._id,
           title: json.title,
@@ -67,6 +71,34 @@ export const getExhibition = (id) => {
         dispatch(exhibitions.actions.setDetailedExhibition(exhibitionListed))
       })
       .catch(err => {
+        dispatch(exhibitions.actions.setStatus(false))
+      })
+      .finally(() => {
+        dispatch(exhibitions.actions.setLoadingOne(false))
+      })
+  }
+}
+
+export const addExhibition = (title, museum, startDate, endDate, link, image, imageText) => {
+  return (dispatch) => {
+    dispatch(exhibitions.actions.setStatus(true))
+    dispatch(exhibitions.actions.setLoadingOne(true))
+    const EXHIBITIONS_URL = `https://final-project-curated.herokuapp.com/exhibitions`
+    fetch(EXHIBITIONS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, museum, startDate, endDate, link, image, imageText })
+    })
+      .then(res => {
+        dispatch(exhibitions.actions.setStatus(res.ok))
+        return res.json()
+      })
+      .then(json => {
+        dispatch(exhibitions.actions.setAddedExhibition(json))
+        dispatch(exhibitions.actions.setExhibitionAdded(true))
+      })
+      .catch(err => {
+        console.log(err)
         dispatch(exhibitions.actions.setStatus(false))
       })
       .finally(() => {
@@ -91,36 +123,6 @@ export const deleteExhibition = (id) => {
         dispatch(exhibitions.actions.setExhibitionDeleted(true))
       })
       .catch(err => {
-        dispatch(exhibitions.actions.setStatus(false))
-      })
-      .finally(() => {
-        dispatch(exhibitions.actions.setLoadingOne(false))
-      })
-  }
-}
-
-export const addExhibition = (title, museum, startDate, endDate, link, image, imageText) => {
-  console.log(JSON.stringify({ title, museum, startDate, endDate, link, image, imageText }))
-  return (dispatch) => {
-    dispatch(exhibitions.actions.setStatus(true))
-    dispatch(exhibitions.actions.setLoadingOne(true))
-    const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions`
-    fetch(EXHIBITION_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, museum, startDate, endDate, link, image, imageText })
-    })
-      .then(res => {
-        console.log(res.ok)
-        dispatch(exhibitions.actions.setStatus(res.ok))
-        return res.json()
-      })
-      .then(json => {
-        dispatch(exhibitions.actions.setExhibitionAdded(true))
-        console.log(json)
-      })
-      .catch(err => {
-        console.log(err)
         dispatch(exhibitions.actions.setStatus(false))
       })
       .finally(() => {

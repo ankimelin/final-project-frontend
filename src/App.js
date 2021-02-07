@@ -7,10 +7,10 @@ import { exhibitions } from './reducers/exhibitions'
 import { Exhibitions } from './routes/Exhibitions'
 import { Exhibition } from './routes/Exhibition'
 import { AboutUs } from './routes/AboutUs'
-import { AdminExhibitions } from './routes/AdminExhibitions'
-import { AdminAdd } from './routes/AdminAdd'
-import { AdminUpdate } from './routes/AdminUpdate'
-import { AdminDelete } from './routes/AdminDelete'
+import { ExhibitionsAdmin } from './routes/Admin/ExhibitionsAdmin'
+import { Add } from './routes/Admin/Add'
+import { Update } from './routes/Admin/Update'
+import { Delete } from './routes/Admin/Delete'
 import { NotFound } from './routes/NotFound'
 
 const reducer = combineReducers({
@@ -40,16 +40,16 @@ export const App = () => {
             <Redirect to='/admin/exhibitions' />
           </Route>
           <Route exact path='/admin/exhibitions'>
-            <AdminExhibitions />
+            <ExhibitionsAdmin />
           </Route>
           <Route exact path='/admin/exhibitions/add'>
-            <AdminAdd />
+            <Add />
           </Route>
           <Route exact path='/admin/exhibitions/:exhibitionId/update'>
-            <AdminUpdate />
+            <Update />
           </Route>
           <Route exact path='/admin/exhibitions/:exhibitionId/delete'>
-            <AdminDelete />
+            <Delete />
           </Route>
           <Route exact path='/not-found'>
             <NotFound />

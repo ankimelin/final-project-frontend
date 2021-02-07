@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { LinkContainer, Button } from '../AdminStyled'
+import { LinkContainer, Button } from '../StyledAdmin'
 
 export const AddExhibitionLink = () => {
 

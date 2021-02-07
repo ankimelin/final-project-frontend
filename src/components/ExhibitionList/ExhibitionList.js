@@ -12,7 +12,7 @@ export const ExhibitionList = () => {
   const dispatch = useDispatch()
   const filter = useSelector(store => store.exhibitions.activeFilter)
   const status = useSelector(store => store.exhibitions.status)
-  const loading = useSelector(store => store.exhibitions.loading)
+  const loading = useSelector(store => store.exhibitions.loadingAll)
 
   const getAllExhibitions = () => {
     dispatch(getExhibitions(filter))

@@ -13,10 +13,8 @@ export const ExhibitionDetails = () => {
   const dispatch = useDispatch()
   const { exhibitionId } = useParams()
   const status = useSelector(store => store.exhibitions.status)
-  const loadingOne = useSelector(store => store.exhibitions.loadingOne)
+  const loading = useSelector(store => store.exhibitions.loadingOne)
   const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
-
-  console.log(loadingOne)
 
   const getOneExhibition = () => {
     dispatch(getExhibition(exhibitionId))
@@ -26,9 +24,9 @@ export const ExhibitionDetails = () => {
 
   return (
     <>
-      {status && loadingOne &&
+      {status && loading &&
         < LoaderContent />}
-      {status && !loadingOne &&
+      {status && !loading &&
         <>
           <GoBackContent />
           <ExhibitionDetailsContent {...exhibition} />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const AdminUpdate = () => {
+export const Update = () => {
   return (
     <p>hej from admin update route</p>
   )

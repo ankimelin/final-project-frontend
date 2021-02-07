@@ -7,14 +7,14 @@ import { DeleteExhibitionQuestion } from './DeleteExhibitionQuestion'
 import { DeleteExhibitionConfirmation } from './DeleteExhibitionConfirmation'
 import { Container } from '../../NotFound/NotFoundStyled'
 import { LoaderContent } from '../../Loader/LoaderContent'
-import { AdminNotFound } from '../AdminNotFound'
+import { NotFoundAdmin } from '../NotFoundAdmin'
 
 export const DeleteExhibition = () => {
 
   const dispatch = useDispatch()
   const { exhibitionId } = useParams()
   const status = useSelector(store => store.exhibitions.status)
-  const loadingOne = useSelector(store => store.exhibitions.loadingOne)
+  const loading = useSelector(store => store.exhibitions.loadingOne)
   const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
   const exhibitionDeleted = useSelector(store => store.exhibitions.exhibitionDeleted)
 
@@ -26,13 +26,13 @@ export const DeleteExhibition = () => {
 
   return (
     <>
-      {status && loadingOne && <LoaderContent />}
-      {status && !loadingOne &&
+      {status && loading && <LoaderContent />}
+      {status && !loading &&
         <Container>
           {!exhibitionDeleted && <DeleteExhibitionQuestion {...exhibition} />}
           {exhibitionDeleted && <DeleteExhibitionConfirmation {...exhibition} />}
         </Container >}
-      {!status && <AdminNotFound />}
+      {!status && <NotFoundAdmin />}
     </>
   )
 }

@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getExhibitions } from '../../reducers/thunks'
 import { LoaderContent } from '../Loader/LoaderContent'
-import { AddExhibitionLink } from './Add/AddExhibitionLink'
+import { AddExhibitionLink } from './Add/AddExhibitionButton'
 import { ExhibitionListContent } from '../ExhibitionList/ExhibitionListContent'
-import { AdminNotFound } from './AdminNotFound'
+import { NotFoundAdmin } from './NotFoundAdmin'
 
-export const AdminExhibitionList = () => {
+export const ExhibitionListAdmin = () => {
 
   const dispatch = useDispatch()
   const status = useSelector(store => store.exhibitions.status)
-  const loading = useSelector(store => store.exhibitions.loading)
+  const loading = useSelector(store => store.exhibitions.loadingAllAdmin)
 
   const getAllExhibitions = () => {
     dispatch(getExhibitions('all'))
@@ -30,7 +30,7 @@ export const AdminExhibitionList = () => {
         </>}
       {
         !status &&
-        <AdminNotFound />
+        <NotFoundAdmin />
       }
     </>
   )

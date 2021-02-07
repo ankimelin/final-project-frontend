@@ -6,13 +6,15 @@ export const exhibitions = createSlice({
     allExhibitions: [],
     displayedExhibitions: [],
     detailedExhibition: {},
+    addedExhibition: {},
     activeFilter: 'Ongoing',
-    status: true,
-    loading: true,
-    loadingOne: true,
     activeAdmin: false,
+    exhibitionAdded: false,
     exhibitionDeleted: false,
-    exhibitionAdded: false
+    status: true,
+    loadingAll: true,
+    loadingOne: true,
+    loadingAllAdmin: true
   },
   reducers: {
     filterExhibitions: (state, action) => {
@@ -21,6 +23,8 @@ export const exhibitions = createSlice({
 
       if (state.allExhibitions.length === 0) {
         state.allExhibitions = exhibitions
+      } else if (filter === 'all') {
+        state.activeFilter = 'Ongoing'
       } else {
         state.activeFilter = filter
       }
@@ -58,26 +62,32 @@ export const exhibitions = createSlice({
     setDetailedExhibition: (state, action) => {
       state.detailedExhibition = action.payload
     },
+    setAddedExhibition: (state, action) => {
+      state.addedExhibition = action.payload
+    },
     setActiveFilter: (state, action) => {
       state.activeFilter = action.payload
-    },
-    setStatus: (state, action) => {
-      state.status = action.payload
-    },
-    setLoading: (state, action) => {
-      state.loading = action.payload
-    },
-    setLoadingOne: (state, action) => {
-      state.loadingOne = action.payload
     },
     setActiveAdmin: (state, action) => {
       state.activeAdmin = action.payload
     },
+    setExhibitionAdded: (state, action) => {
+      state.exhibitionAdded = action.payload
+    },
     setExhibitionDeleted: (state, action) => {
       state.exhibitionDeleted = action.payload
     },
-    setExhibitionAdded: (state, action) => {
-      state.exhibitionAdded = action.payload
+    setStatus: (state, action) => {
+      state.status = action.payload
+    },
+    setLoadingAll: (state, action) => {
+      state.loadingAll = action.payload
+    },
+    setLoadingOne: (state, action) => {
+      state.loadingOne = action.payload
+    },
+    setLoadingAllAdmin: (state, action) => {
+      state.loadingAllAdmin = action.payload
     }
   }
 })
