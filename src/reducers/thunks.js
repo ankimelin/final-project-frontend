@@ -1,5 +1,19 @@
 import { exhibitions } from './exhibitions'
 
+const MUSEUMS_URL = 'https://final-project-curated.herokuapp.com/museums'
+const EXHIBITIONS_URL = 'https://final-project-curated.herokuapp.com/exhibitions'
+
+export const getMuseums = () => {
+  return (dispatch) => {
+    fetch(MUSEUMS_URL)
+      .then(res => res.json()) // res.ok handling
+      .then(json => {
+        return dispatch(exhibitions.actions.setMuseums(json))
+      })
+      .catch(err => console.log(err)) // error handling
+  }
+}
+
 export const getExhibitions = (filter) => {
   return (dispatch) => {
     if (filter === 'all') {
@@ -8,7 +22,7 @@ export const getExhibitions = (filter) => {
       dispatch(exhibitions.actions.setLoadingAll(true))
     }
     dispatch(exhibitions.actions.setStatus(true))
-    const EXHIBITIONS_URL = 'https://final-project-curated.herokuapp.com/exhibitions'
+
     fetch(EXHIBITIONS_URL)
       .then(res => {
         dispatch(exhibitions.actions.setStatus(res.ok))
@@ -44,10 +58,10 @@ export const getExhibitions = (filter) => {
 }
 
 export const getExhibition = (id) => {
+  const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
   return (dispatch) => {
     dispatch(exhibitions.actions.setLoadingOne(true))
     dispatch(exhibitions.actions.setStatus(true))
-    const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
     fetch(EXHIBITION_URL)
       .then(res => {
         dispatch(exhibitions.actions.setStatus(res.ok))
@@ -83,7 +97,6 @@ export const addExhibition = (title, museum, startDate, endDate, link, image, im
   return (dispatch) => {
     dispatch(exhibitions.actions.setStatus(true))
     dispatch(exhibitions.actions.setLoadingOne(true))
-    const EXHIBITIONS_URL = `https://final-project-curated.herokuapp.com/exhibitions`
     fetch(EXHIBITIONS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -108,10 +121,10 @@ export const addExhibition = (title, museum, startDate, endDate, link, image, im
 }
 
 export const deleteExhibition = (id) => {
+  const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
   return (dispatch) => {
     dispatch(exhibitions.actions.setStatus(true))
     dispatch(exhibitions.actions.setLoadingOne(true))
-    const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
     fetch(EXHIBITION_URL, {
       method: 'DELETE'
     })

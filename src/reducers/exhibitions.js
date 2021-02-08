@@ -3,20 +3,26 @@ import { createSlice } from '@reduxjs/toolkit'
 export const exhibitions = createSlice({
   name: 'exhibitions',
   initialState: {
+    museums: [],
     allExhibitions: [],
     displayedExhibitions: [],
     detailedExhibition: {},
-    addedExhibition: {},
     activeFilter: 'Ongoing',
+
     activeAdmin: false,
+    addedExhibition: {},
     exhibitionAdded: false,
     exhibitionDeleted: false,
+
     status: true,
     loadingAll: true,
     loadingOne: true,
     loadingAllAdmin: true
   },
   reducers: {
+    setMuseums: (state, action) => {
+      state.museums = action.payload
+    },
     filterExhibitions: (state, action) => {
       const { exhibitions, filter } = action.payload
       const today = new Date().setHours(0, 0, 0, 0)

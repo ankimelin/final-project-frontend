@@ -5,9 +5,9 @@ import { getExhibitions } from '../../reducers/thunks'
 import { LoaderContent } from '../Reusable/LoaderContent'
 import { AddExhibitionButton } from './Add/AddExhibitionButton'
 import { ExhibitionList } from '../Exhibitions/ExhibitionList/ExhibitionList'
-import { NotFoundContent } from './NotFoundContent'
+import { NotFoundContent } from '../Reusable/NotFoundContent'
 
-export const ExhibitionListAdmin = () => {
+export const ExhibitionsContentAdmin = () => {
 
   const dispatch = useDispatch()
   const status = useSelector(store => store.exhibitions.status)

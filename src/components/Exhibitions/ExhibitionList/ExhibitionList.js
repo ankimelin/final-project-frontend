@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionsContainer } from './StyledExhibitionList'
-import { ExhibitionCard } from './ExhibitionCard'
+import { ExhibitionCardContent } from './ExhibitionCardContent'
 
 export const ExhibitionList = () => {
 
@@ -11,7 +11,7 @@ export const ExhibitionList = () => {
   return (
     <ExhibitionsContainer>
       {displayedExhibitions.map(exhibition => {
-        return <ExhibitionCard
+        return <ExhibitionCardContent
           key={exhibition.id}
           {...exhibition} />
       })}

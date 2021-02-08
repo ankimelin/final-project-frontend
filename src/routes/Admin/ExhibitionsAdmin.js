@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../../reducers/exhibitions'
+import { getMuseums } from '../../reducers/thunks'
 import { HeaderContent } from '../../components/Reusable/HeaderContent'
-import { ExhibitionsContent } from '../../components/Exhibitions/ExhibitionsContent'
+import { ExhibitionsContentAdmin } from '../../components/Admin/ExhibitionsContentAdmin'
 import { FooterContent } from '../../components/Reusable/FooterContent'
 import { MainContainer } from '../StyledRoutes'
 
@@ -19,12 +20,17 @@ export const ExhibitionsAdmin = () => {
     dispatch(exhibitions.actions.setLoadingOne(true))
   }
 
+  const getAllMuseums = () => {
+    dispatch(getMuseums())
+  }
+
   useEffect(clearStates, [])
+  useEffect(getAllMuseums, [])
 
   return (
     <MainContainer>
       <HeaderContent />
-      <ExhibitionsContent />
+      <ExhibitionsContentAdmin />
       <FooterContent />
     </MainContainer>
   )

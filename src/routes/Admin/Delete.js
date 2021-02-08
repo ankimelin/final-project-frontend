@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../../reducers/exhibitions'
 import { HeaderContent } from '../../components/Reusable/HeaderContent'
-import { DeleteExhibition } from '../../components/Admin/Delete/DeleteExhibition'
+import { DeleteExhibitionContent } from '../../components/Admin/Delete/DeleteExhibitionContent'
 import { FooterContent } from '../../components/Reusable/FooterContent'
 import { MainContainer } from '../StyledRoutes'
 
@@ -21,7 +21,7 @@ export const Delete = () => {
   return (
     <MainContainer>
       <HeaderContent />
-      <DeleteExhibition />
+      <DeleteExhibitionContent />
       <FooterContent />
     </MainContainer >
   )
