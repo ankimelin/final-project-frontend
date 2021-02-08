@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getExhibition } from '../../../reducers/thunks'
 import { DeleteExhibitionQuestion } from './DeleteExhibitionQuestion'
 import { DeleteExhibitionConfirmation } from './DeleteExhibitionConfirmation'
-import { MessageContainer } from '../../StyledComponents'
-import { LoaderContent } from '../../LoaderContent'
-import { NotFoundAdmin } from '../NotFoundAdmin'
+import { MessageContainer } from '../../Reusable/StyledReusable'
+import { LoaderContent } from '../../Reusable/LoaderContent'
+import { NotFoundContent } from '../../Reusable/NotFoundContent'
 
 export const DeleteExhibition = () => {
 
@@ -32,7 +32,7 @@ export const DeleteExhibition = () => {
           {!exhibitionDeleted && <DeleteExhibitionQuestion {...exhibition} />}
           {exhibitionDeleted && <DeleteExhibitionConfirmation {...exhibition} />}
         </MessageContainer >}
-      {!status && <NotFoundAdmin />}
+      {!status && <NotFoundContent />}
     </>
   )
 }

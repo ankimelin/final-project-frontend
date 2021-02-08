@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../reducers/exhibitions'
-import { HeaderContent } from '../components/HeaderContent'
-import { ExhibitionDetails } from '../components/Exhibition/ExhibitionDetails'
-import { FooterContent } from '../components/FooterContent'
+import { HeaderContent } from '../components/Reusable/HeaderContent'
+import { ExhibitionContent } from '../components/Exhibition/ExhibitionContent'
+import { FooterContent } from '../components/Reusable/FooterContent'
 import { MainContainer } from './StyledRoutes'
 
 export const Exhibition = () => {
@@ -20,7 +20,7 @@ export const Exhibition = () => {
   return (
     <MainContainer>
       <HeaderContent />
-      <ExhibitionDetails />
+      <ExhibitionContent />
       <FooterContent />
     </MainContainer>
   )

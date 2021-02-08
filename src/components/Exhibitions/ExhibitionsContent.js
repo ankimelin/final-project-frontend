@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getExhibitions } from '../../reducers/thunks'
-import { LoaderContent } from '../LoaderContent'
+import { LoaderContent } from '../Reusable/LoaderContent'
 import { ExhibitionFilterList } from './ExhibitionFilter/ExhibitionFilterList'
-import { ExhibitionListContent } from './ExhibitionListContent'
-import { NotFoundContent } from '../NotFoundContent'
+import { ExhibitionList } from './ExhibitionList/ExhibitionList'
+import { NotFoundContent } from '../Reusable/NotFoundContent'
 
-export const ExhibitionList = () => {
+export const ExhibitionsContent = () => {
 
   const dispatch = useDispatch()
   const filter = useSelector(store => store.exhibitions.activeFilter)
@@ -21,10 +21,16 @@ export const ExhibitionList = () => {
   useEffect(getAllExhibitions, [])
 
   return (
-    <>{status && loading && <LoaderContent />}
+    <>
+      {status && loading &&
+        <LoaderContent />}
       {status && !loading &&
-        <><ExhibitionFilterList />
-          <ExhibitionListContent /></>}
-      {!status && <NotFoundContent />}</>
+        <>
+          <ExhibitionFilterList />
+          <ExhibitionList />
+        </>}
+      {!status &&
+        <NotFoundContent />}
+    </>
   )
 }

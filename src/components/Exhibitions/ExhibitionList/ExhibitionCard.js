@@ -2,9 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionLink, ExhibitionCardContainer, ExhibitionCardTitle, ExhibitionCardText, ExhibitionCardDateContainer, ExhibitionCardButtonContainer, DeleteLink }
-  from './StyledExhibitionCard'
+  from './StyledExhibitionList'
 
-export const ExhibitionCardContent = ({ ...exhibition }) => {
+export const ExhibitionCard = ({ ...exhibition }) => {
 
   const admin = useSelector(store => store.exhibitions.activeAdmin)
   const filter = useSelector(store => store.exhibitions.activeFilter)

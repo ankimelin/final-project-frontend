@@ -1,7 +1,7 @@
 import React from 'react'
 import Loader from 'react-loader-spinner'
 
-import { LoaderContainer } from './StyledComponents'
+import { LoaderContainer } from './StyledReusable'
 
 export const LoaderContent = () => {
   return (

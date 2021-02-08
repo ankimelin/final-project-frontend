@@ -2,10 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getExhibitions } from '../../reducers/thunks'
-import { LoaderContent } from '../LoaderContent'
+import { LoaderContent } from '../Reusable/LoaderContent'
 import { AddExhibitionButton } from './Add/AddExhibitionButton'
-import { ExhibitionListContent } from '../ExhibitionList/ExhibitionListContent'
-import { NotFoundAdmin } from './NotFoundAdmin'
+import { ExhibitionList } from '../Exhibitions/ExhibitionList/ExhibitionList'
+import { NotFoundContent } from './NotFoundContent'
 
 export const ExhibitionListAdmin = () => {
 
@@ -25,11 +25,11 @@ export const ExhibitionListAdmin = () => {
         <LoaderContent />}
       {status && !loading &&
         <><AddExhibitionButton />
-          <ExhibitionListContent />
+          <ExhibitionList />
         </>}
       {
         !status &&
-        <NotFoundAdmin />
+        <NotFoundContent />
       }
     </>
   )

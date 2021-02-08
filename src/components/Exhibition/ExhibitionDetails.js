@@ -1,40 +1,24 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import React from 'react'
 
-import { getExhibition } from '../../reducers/thunks'
-import { LoaderContent } from '../LoaderContent'
-import { GoBackContent } from './GoBackContent'
-import { ExhibitionDetailsContent } from './ExhibitionDetailsContent'
-import { NotFoundContent } from '../NotFoundContent'
+import { ExhibitionDetailsContainer, ExhibitionDetailsImage, ExhibitionDetailsImageText, ExhibitionDetailsDateContainer, ExhibitionDetailsTitle, ExhibitionDetailsText, ExternalExhibitionLink }
+  from './StyledExhibition'
 
-export const ExhibitionDetails = () => {
-
-  const dispatch = useDispatch()
-  const { exhibitionId } = useParams()
-  const status = useSelector(store => store.exhibitions.status)
-  const loading = useSelector(store => store.exhibitions.loadingOne)
-  const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
-
-  const getOneExhibition = () => {
-    dispatch(getExhibition(exhibitionId))
-  }
-
-  useEffect(getOneExhibition, [])
-
+export const ExhibitionDetails = ({ ...exhibition }) => {
   return (
-    <>
-      {status && loading &&
-        < LoaderContent />}
-      {status && !loading &&
-        <>
-          <GoBackContent />
-          <ExhibitionDetailsContent {...exhibition} />
-        </>}
-      {
-        !status &&
-        <NotFoundContent />
-      }
-    </>
+    <ExhibitionDetailsContainer>
+      <ExhibitionDetailsImage src={exhibition.image}></ExhibitionDetailsImage>
+      <ExhibitionDetailsImageText>{exhibition.imageText}</ExhibitionDetailsImageText>
+      <ExhibitionDetailsTitle>{exhibition.title}</ExhibitionDetailsTitle>
+      <ExhibitionDetailsText className='artists'>
+        {exhibition.artists > 0 ? exhibition.artists.map(artist => artist) : null}
+      </ExhibitionDetailsText>
+      <ExhibitionDetailsDateContainer>
+        <ExhibitionDetailsText className='date'>{exhibition.startDate}</ExhibitionDetailsText>
+        <ExhibitionDetailsText className='space'>-</ExhibitionDetailsText>
+        <ExhibitionDetailsText className='date'>{exhibition.endDate}</ExhibitionDetailsText>
+      </ExhibitionDetailsDateContainer>
+      <ExhibitionDetailsText className='museum'>{exhibition.museum}</ExhibitionDetailsText>
+      <ExternalExhibitionLink href={exhibition.link}>Go to exhibition{'>>'}</ExternalExhibitionLink>
+    </ExhibitionDetailsContainer>
   )
 }

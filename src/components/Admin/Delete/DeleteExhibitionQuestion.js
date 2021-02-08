@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { deleteExhibition } from '../../../reducers/thunks'
 import { Button } from '../StyledAdmin'
-import { MessageText, ExhibitionsLink } from '../../StyledComponents'
+import { MessageText, ExhibitionsLink } from '../../Reusable/StyledReusable'
 
 export const DeleteExhibitionQuestion = ({ ...exhibition }) => {
 

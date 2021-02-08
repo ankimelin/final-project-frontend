@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { MenuContainer, MenuLink, TitleContainer, TitleText } from './StyledComponents'
+import { MenuContainer, MenuLink, TitleContainer, TitleText } from './StyledReusable'
 
 export const HeaderContent = () => {
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionFilterButton } from './ExhibitionFilterButton'
-import { FilterContainer } from '../StyledExhibitionList'
+import { FilterContainer } from './StyledExhibitionFilter'
 
 export const ExhibitionFilterList = () => {
 

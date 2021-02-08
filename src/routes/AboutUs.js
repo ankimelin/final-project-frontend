@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../reducers/exhibitions'
-import { HeaderContent } from '../components/HeaderContent'
-import { AboutContent } from '../components/AboutUsContent'
-import { FooterContent } from '../components/FooterContent'
+import { HeaderContent } from '../components/Reusable/HeaderContent'
+import { AboutUsContent } from '../components/AboutUs/AboutUsContent'
+import { FooterContent } from '../components/Reusable/FooterContent'
 import { MainContainer } from './StyledRoutes'
 
 export const AboutUs = () => {
@@ -23,7 +23,7 @@ export const AboutUs = () => {
   return (
     <MainContainer>
       <HeaderContent />
-      <AboutContent />
+      <AboutUsContent />
       <FooterContent />
     </MainContainer>
   )
