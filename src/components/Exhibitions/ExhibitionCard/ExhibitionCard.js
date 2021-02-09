@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionCardContainer, ExhibitionCardTitle, ExhibitionCardText, ExhibitionCardDateContainer, ExhibitionCardButtonContainer, DeleteLink }
-  from './StyledExhibitionList'
+  from './StyledExhibitionCard'
 
 export const ExhibitionCard = ({ admin, ...exhibition }) => {
 

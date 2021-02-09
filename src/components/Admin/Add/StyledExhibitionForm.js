@@ -7,7 +7,7 @@ export const BackContainer = styled(Link)`
   margin-left: 25px;
   height: 50px;
   @media (min-width: 768px) and (max-width: 1023px) {
-    margin-left: 100px;
+    margin-left: 200px;
     height: 100px;
   }
   
@@ -34,9 +34,11 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   padding: 0 25px 75px 25px;
+  
   @media (min-width: 768px) and (max-width: 1023px) {
-    padding: 75px 225px;
+    padding: 0 200px;
   }
+  
   @media (min-width: 1024px) {
     padding: 75px 0;
     width: 400px;
@@ -107,22 +109,20 @@ export const Button = styled.button`
   font-family: 'Arial', sans-serif;
   font-weight: 600;
   color: white;
+  
   &.clear-button {
     background-color: #F9F9F9;
     color: black;
   }
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 18px;
+    font-size: 16px;
   }
   @media (min-width: 1024px) {
-    font-size: 18px;
+    font-size: 16px;
     &:hover {
       background-color: #FD21A5;
       color: white;  
       cursor: pointer;
-    }
-    &:focus {
-      outline: 2px solid orange;  ??
     }
   }
 `

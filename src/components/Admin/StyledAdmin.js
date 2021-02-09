@@ -7,6 +7,18 @@ flex-direction: column;
 align-items: center;
 margin: 25px;
 background-color: green;
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  margin: 25px 200px 0 200px;
+  
+}
+@media (min-width: 1024px) {
+  
+  &:hover {
+    background-color: #FD21A5;
+    color: white;  
+    cursor: pointer;
+  }
 `
 
 export const DeleteContainer = styled.div`
@@ -60,4 +72,15 @@ export const Button = styled.button`
     width: 100%;
     color: white;
   }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 16px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 18px;
+    &:hover {
+      background-color: #FD21A5;
+      color: white;  
+      cursor: pointer;
+    }
 `

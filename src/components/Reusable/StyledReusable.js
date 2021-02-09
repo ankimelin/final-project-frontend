@@ -120,6 +120,7 @@ export const MessageContainer = styled.div`
   height: calc(100vh - 203px);
 
   @media (min-width: 768px) and (max-width: 1023px) {
+    padding: 0 200px;
     height: calc(100vh - 253px);
   }
 
@@ -151,7 +152,7 @@ export const MessageText = styled.p`
   font-family: 'Nothing You Could Do', cursive;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   @media (min-width: 1024px) {

@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionsContainer } from './StyledExhibitionList'
-import { ExhibitionCardContent } from './ExhibitionCardContent'
+import { ExhibitionCardContent } from '../ExhibitionCard/ExhibitionCardContent'
 
 export const ExhibitionList = () => {
 

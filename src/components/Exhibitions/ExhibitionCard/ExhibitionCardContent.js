@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { ExhibitionCard } from './ExhibitionCard'
-import { ExhibitionLink } from './StyledExhibitionList'
+import { ExhibitionLink } from './StyledExhibitionCard'
 
 export const ExhibitionCardContent = ({ ...exhibition }) => {
 
