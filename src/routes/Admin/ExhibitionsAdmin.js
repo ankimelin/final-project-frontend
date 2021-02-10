@@ -6,7 +6,7 @@ import { getMuseums } from '../../reducers/thunks'
 import { HeaderContent } from '../../components/Reusable/HeaderContent'
 import { ExhibitionsContentAdmin } from '../../components/Admin/ExhibitionsContentAdmin'
 import { FooterContent } from '../../components/Reusable/FooterContent'
-import { MainContainer } from '../StyledRoutes'
+import { MainContainer } from '../../styling/StyledContainer'
 
 export const ExhibitionsAdmin = () => {
 

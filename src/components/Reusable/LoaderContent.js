@@ -1,12 +1,12 @@
 import React from 'react'
 import Loader from 'react-loader-spinner'
 
-import { LoaderContainer } from './StyledReusable'
+import { LoaderContainer } from '../../styling/StyledContainer'
 
 export const LoaderContent = () => {
   return (
     <LoaderContainer>
-      <Loader type='TailSpin' color='#FD21A5' />
+      <Loader type='TailSpin' color='#e25822' />
     </LoaderContainer>
   )
 }

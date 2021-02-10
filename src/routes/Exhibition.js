@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../reducers/exhibitions'
 import { HeaderContent } from '../components/Reusable/HeaderContent'
-import { ExhibitionContent } from '../components/Exhibition/ExhibitionContent'
+import { ExhibitionDetails } from '../components/Exhibition/ExhibitionDetails'
 import { FooterContent } from '../components/Reusable/FooterContent'
-import { MainContainer } from './StyledRoutes'
+import { MainContainer } from '../styling/StyledContainer'
 
 export const Exhibition = () => {
 
@@ -20,7 +20,7 @@ export const Exhibition = () => {
   return (
     <MainContainer>
       <HeaderContent />
-      <ExhibitionContent />
+      <ExhibitionDetails />
       <FooterContent />
     </MainContainer>
   )

@@ -1,6 +1,8 @@
 import React from 'react'
 
-import { MessageContainer, MessageText, ExhibitionsLink } from '../../Reusable/StyledReusable'
+import { MessageContainer } from '../../../styling/StyledContainer'
+import { MessageText } from '../../../styling/StyledText'
+import { ExhibitionsLink } from '../../../styling/StyledLink'
 
 export const AddExhibitionConfirmation = ({ ...exhibition }) => {
 

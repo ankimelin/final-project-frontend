@@ -1,7 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { MessageContainer, MessageText, ExhibitionsLink } from './StyledReusable'
+import { MessageContainer } from '../../styling/StyledContainer'
+import { MessageText } from '../../styling/StyledText'
+import { ExhibitionsLink } from '../../styling/StyledLink'
 
 export const NotFoundContent = () => {
 

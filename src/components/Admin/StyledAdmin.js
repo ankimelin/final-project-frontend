@@ -5,8 +5,9 @@ export const LinkContainer = styled(Link)`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin: 25px;
+margin: 25px 20px;
 background-color: green;
+text-decoration: none;
 
 @media (min-width: 768px) and (max-width: 1023px) {
   margin: 25px 200px 0 200px;
@@ -14,11 +15,7 @@ background-color: green;
 }
 @media (min-width: 1024px) {
   
-  &:hover {
-    background-color: #FD21A5;
-    color: white;  
-    cursor: pointer;
-  }
+
 `
 
 export const DeleteContainer = styled.div`
@@ -46,18 +43,13 @@ export const Button = styled.button`
   padding: 10px;
   border: 1px dashed black;
   font-size: 12px;
-  background-color:black;
+  background-color: #ececeb;
   font-weight: 600;
-  color: white;
-  &:hover {
-    cursor: pointer;
-  }
+
 &.add {
   margin: 0;
   width: 100%;
   border-style: none;
-  background-color: black;
-  color: white;
 }
   &.delete {
     margin-left: 20px;
@@ -78,8 +70,9 @@ export const Button = styled.button`
   }
   @media (min-width: 1024px) {
     font-size: 18px;
+
     &:hover {
-      background-color: #FD21A5;
+      background-color: #10316b;
       color: white;  
       cursor: pointer;
     }

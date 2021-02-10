@@ -1,20 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { ExhibitionsContainer } from './StyledExhibitionList'
-import { ExhibitionCardContent } from '../ExhibitionCard/ExhibitionCardContent'
+import { ExhibitionListContainer } from '../../styling/StyledContainer'
+import { ExhibitionCard } from './ExhibitionCard'
 
-export const ExhibitionList = () => {
+export const ExhibitionListContent = () => {
 
   const displayedExhibitions = useSelector(store => store.exhibitions.displayedExhibitions)
 
   return (
-    <ExhibitionsContainer>
+    <ExhibitionListContainer>
       {displayedExhibitions.map(exhibition => {
-        return <ExhibitionCardContent
+        return <ExhibitionCard
           key={exhibition.id}
           {...exhibition} />
       })}
-    </ExhibitionsContainer>
+    </ExhibitionListContainer>
   )
 }

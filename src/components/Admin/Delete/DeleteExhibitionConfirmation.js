@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { MessageText, ExhibitionsLink } from '../../Reusable/StyledReusable'
+import { MessageText } from '../../../styling/StyledText'
+import { ExhibitionsLink } from '../../../styling/StyledLink'
 
 export const DeleteExhibitionConfirmation = ({ ...exhibition }) => {
 

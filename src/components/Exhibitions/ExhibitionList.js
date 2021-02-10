@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getExhibitions } from '../../reducers/thunks'
 import { LoaderContent } from '../Reusable/LoaderContent'
-import { ExhibitionFilterList } from './ExhibitionFilter/ExhibitionFilterList'
-import { ExhibitionList } from './ExhibitionList/ExhibitionList'
+import { ExhibitionFilterList } from './ExhibitionFilterList'
+import { ExhibitionListContent } from './ExhibitionListContent'
 import { NotFoundContent } from '../Reusable/NotFoundContent'
 
-export const ExhibitionsContent = () => {
+export const ExhibitionList = () => {
 
   const dispatch = useDispatch()
   const filter = useSelector(store => store.exhibitions.activeFilter)
@@ -27,7 +27,7 @@ export const ExhibitionsContent = () => {
       {status && !loading &&
         <>
           <ExhibitionFilterList />
-          <ExhibitionList />
+          <ExhibitionListContent />
         </>}
       {!status &&
         <NotFoundContent />}

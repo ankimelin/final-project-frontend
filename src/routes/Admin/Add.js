@@ -5,7 +5,7 @@ import { exhibitions } from '../../reducers/exhibitions'
 import { HeaderContent } from '../../components/Reusable/HeaderContent'
 import { AddExhibitionContent } from '../../components/Admin/Add/AddExhibitionContent'
 import { FooterContent } from '../../components/Reusable/FooterContent'
-import { MainContainer } from '../StyledRoutes'
+import { MainContainer } from '../../styling/StyledContainer'
 
 export const Add = () => {
 

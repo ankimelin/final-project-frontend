@@ -38,6 +38,7 @@ export const getExhibitions = (filter) => {
               startDate: new Date(exhibition.startDate).setHours(0, 0, 0, 0),
               endDate: new Date(exhibition.endDate).setHours(0, 0, 0, 0),
               museum: exhibition.museum,
+              link: exhibition.link,
               image: exhibition.image,
               imageText: exhibition.imageText
             }

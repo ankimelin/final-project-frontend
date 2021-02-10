@@ -5,34 +5,39 @@ export const ExhibitionLink = styled(Link)`
   text-decoration: none;
 
   @media (min-width: 1024px) {
-    margin-bottom: 25px;
+
   }
 `
 
 export const ExhibitionCardContainer = styled.div`
-  padding: 20px;
-  margin-bottom: 25px; 
-  background-color: #F9F9F9;
+  margin-bottom: 25px;
   color: black;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-
+    margin-bottom: 50px;
   }
   
   @media (min-width: 1024px) {
-    margin-bottom: 0; 
-    width: 300px; 
 
     &:hover {
-      background-color: black;
-      color: white;
+     
+    }
     }
   }
+`
+export const ExhibitionCardImageContainer = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+`
+
+export const ExhibitionCardTextContainer = styled.div`
+ 
 `
 
 export const ExhibitionCardDateContainer = styled.div`
   display: flex;
-  margin: 2.5px 0;
+  margin: 2px 0;
 
   @media (min-width: 768px) and (max-width: 1023px) {
     margin: 5px 0;
@@ -45,6 +50,7 @@ export const ExhibitionCardDateContainer = styled.div`
 
 export const ExhibitionCardTitle = styled.h2`
   margin: 0;
+  padding: 0;
   font-size: 16px;
   font-weight: 500;
 
@@ -57,18 +63,47 @@ export const ExhibitionCardTitle = styled.h2`
   }
 `
 
+export const ExhibitionCardImage = styled.img`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: 100%;
+  }
+  
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
+`
+export const ExhibitionCardImageText = styled.p`
+  margin: 0;
+  width: 100%;
+  font-size: 10px;
+  text-align: left;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 14px;
+  }
+`
+
 export const ExhibitionCardText = styled.p`
   margin: 0;
 
   &.artists {
-    font-size: 14px;
+    font-size: 12px;
+    margin: 2px 0;
 
     @media (min-width: 768px) and (max-width: 1023px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     
     @media (min-width: 1024px) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
@@ -131,16 +166,14 @@ export const ExhibitionCardButtonContainer = styled.div`
   width: 100%;
 `
 
-export const DeleteLink = styled(Link)`
-  margin: 20px 0 0 0;
-  padding: 10px;
-  border: 1px dashed black;
-  background-color: #F9F9F9;
+export const UpdateAndDeleteLink = styled(Link)`
+  margin: 0;
+  padding: 10px 0 0 0;
+
   font-size: 12px;
   font-family: 'Arial', sans-serif; 
-  font-weight: 600;
   text-decoration: none;
-  color: black;
+  color: #e25822;
 
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 16px;
@@ -148,5 +181,11 @@ export const DeleteLink = styled(Link)`
   
   @media (min-width: 1024px) {
     font-size: 16px;
+
+    &:hover {
+      background-color: #FD21A5;
+      color: white;
+      border-color: white;
+    }
   }
 `

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { LinkContainer, LinkImage } from './StyledExhibition'
+import { LinkContainer, LinkImage } from '../../styling/StyledExhibitionDetails'
 
 export const GoBackLink = () => {
   return (

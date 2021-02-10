@@ -5,7 +5,7 @@ import { exhibitions } from '../../reducers/exhibitions'
 import { HeaderContent } from '../../components/Reusable/HeaderContent'
 import { DeleteExhibitionContent } from '../../components/Admin/Delete/DeleteExhibitionContent'
 import { FooterContent } from '../../components/Reusable/FooterContent'
-import { MainContainer } from '../StyledRoutes'
+import { MainContainer } from '../../styling/StyledContainer'
 
 export const Delete = () => {
 
