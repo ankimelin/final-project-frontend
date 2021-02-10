@@ -1,13 +1,12 @@
 import React from 'react'
 
-import { AboutContainer } from '../../styling/StyledContainer'
-import { AboutText } from '../../styling/StyledText'
+import { AboutContainer, AboutText } from '../../styling/StyledAboutUs'
 
 export const AboutUsContent = () => {
   return (
     <AboutContainer >
       <AboutText>
-        We are a curated art site listing top contemporary art exhibitions in Stockholm.<br></br><br></br>
+        This is a curated art site <br></br>listing top contemporary art exhibitions <br></br>in Stockholm.<br></br><br></br>
         All art forms are welcome.
       </AboutText>
     </AboutContainer>

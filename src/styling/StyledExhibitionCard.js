@@ -5,7 +5,7 @@ export const ExhibitionLink = styled(Link)`
   text-decoration: none;
 
   @media (min-width: 1024px) {
-
+    width: calc(50% - 25px);
   }
 `
 
@@ -18,7 +18,8 @@ export const ExhibitionCardContainer = styled.div`
   }
   
   @media (min-width: 1024px) {
-
+    margin-bottom: 50px;
+ 
     &:hover {
      
     }
@@ -183,9 +184,7 @@ export const UpdateAndDeleteLink = styled(Link)`
     font-size: 16px;
 
     &:hover {
-      background-color: #FD21A5;
-      color: white;
-      border-color: white;
+      text-decoration: underline;
     }
   }
 `

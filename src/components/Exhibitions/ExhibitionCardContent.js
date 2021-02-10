@@ -14,7 +14,7 @@ export const ExhibitionCardContent = ({ admin, ...exhibition }) => {
   const filter = useSelector(store => store.exhibitions.activeFilter)
 
   return (
-    <ExhibitionCardContainer className={admin ? 'admin' : null}>
+    <ExhibitionCardContainer>
       <ExhibitionCardTextContainer >
         <ExhibitionCardTitle>{exhibition.title}</ExhibitionCardTitle>
         <ExhibitionCardDateContainer>
@@ -38,10 +38,10 @@ export const ExhibitionCardContent = ({ admin, ...exhibition }) => {
       {admin &&
         <>
           <ExhibitionCardButtonContainer>
-            <UpdateAndDeleteLink to={`/admin/exhibitions/${exhibition.id}/update`}>Update Exhibition</UpdateAndDeleteLink>
+            <UpdateAndDeleteLink to={`/admin`}>Update Exhibition</UpdateAndDeleteLink>
             <UpdateAndDeleteLink to={`/admin/exhibitions/${exhibition.id}/delete`}>Delete Exhibition</UpdateAndDeleteLink>
           </ExhibitionCardButtonContainer>
         </>}
-    </ExhibitionCardContainer>
+    </ExhibitionCardContainer >
   )
 }

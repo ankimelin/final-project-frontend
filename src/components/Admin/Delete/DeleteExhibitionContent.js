@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getExhibition } from '../../../reducers/thunks'
 import { DeleteExhibitionQuestion } from './DeleteExhibitionQuestion'
 import { DeleteExhibitionConfirmation } from './DeleteExhibitionConfirmation'
-import { MessageContainer } from '../../../styling/StyledContainer'
 import { LoaderContent } from '../../Reusable/LoaderContent'
 import { NotFoundContent } from '../../Reusable/NotFoundContent'
+import { MessageContainer } from '../../../styling/StyledMessage'
 
 export const DeleteExhibitionContent = () => {
 

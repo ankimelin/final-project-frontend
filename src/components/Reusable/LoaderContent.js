@@ -1,7 +1,7 @@
 import React from 'react'
 import Loader from 'react-loader-spinner'
 
-import { LoaderContainer } from '../../styling/StyledContainer'
+import { LoaderContainer } from '../../styling/StyledLoader'
 
 export const LoaderContent = () => {
   return (

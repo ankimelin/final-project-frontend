@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 import { getExhibition } from '../../reducers/thunks'
 import { LoaderContent } from '../Reusable/LoaderContent'
-import { GoBackLink } from './GoBackLink'
+import { GoBackContent } from '../Reusable/GoBackContent'
 import { ExhibitionDetailsContent } from './ExhibitionDetailsContent'
 import { NotFoundContent } from '../Reusable/NotFoundContent'
 
@@ -28,7 +28,7 @@ export const ExhibitionDetails = () => {
         < LoaderContent />}
       {status && !loading &&
         <>
-          <GoBackLink />
+          <GoBackContent />
           <ExhibitionDetailsContent {...exhibition} />
         </>}
       {!status &&

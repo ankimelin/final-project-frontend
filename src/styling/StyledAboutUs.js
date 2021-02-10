@@ -1,0 +1,34 @@
+import styled from 'styled-components'
+
+export const AboutContainer = styled.div`
+  margin: 50px 0 75px 0;
+  padding-top: 25px;
+  border-top: solid 1px black;
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding-top: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 50px;
+  }
+`
+
+export const AboutText = styled.p`
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  font-size: 16px;
+  text-align: right; 
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  line-height: 24px;
+  font-size: 20px;
+}
+
+@media (min-width: 1024px) {
+  line-height: 24px;
+  font-size: 20px;
+}
+`
+

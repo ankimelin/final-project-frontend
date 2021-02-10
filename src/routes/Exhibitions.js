@@ -5,7 +5,7 @@ import { exhibitions } from '../reducers/exhibitions'
 import { HeaderContent } from '../components/Reusable/HeaderContent'
 import { ExhibitionList } from '../components/Exhibitions/ExhibitionList'
 import { FooterContent } from '../components/Reusable/FooterContent'
-import { MainContainer } from '../styling/StyledContainer'
+import { MainContainer } from '../styling/StyledMain'
 
 export const Exhibitions = () => {
 

@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { FooterContainer } from '../../styling/StyledContainer'
-import { FooterText } from '../../styling/StyledText'
+import { FooterContainer, FooterText } from '../../styling/StyledFooter'
 
 export const FooterContent = () => {
   return (

@@ -94,14 +94,14 @@ export const getExhibition = (id) => {
   }
 }
 
-export const addExhibition = (title, museum, startDate, endDate, link, image, imageText) => {
+export const addExhibition = (title, museum, artists, startDate, endDate, link, image, imageText) => {
   return (dispatch) => {
     dispatch(exhibitions.actions.setStatus(true))
     dispatch(exhibitions.actions.setLoadingOne(true))
     fetch(EXHIBITIONS_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, museum, startDate, endDate, link, image, imageText })
+      body: JSON.stringify({ title, museum, artists, startDate, endDate, link, image, imageText })
     })
       .then(res => {
         dispatch(exhibitions.actions.setStatus(res.ok))

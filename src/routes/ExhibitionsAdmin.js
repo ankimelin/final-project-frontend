@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { exhibitions } from '../../reducers/exhibitions'
-import { getMuseums } from '../../reducers/thunks'
-import { HeaderContent } from '../../components/Reusable/HeaderContent'
-import { ExhibitionsContentAdmin } from '../../components/Admin/ExhibitionsContentAdmin'
-import { FooterContent } from '../../components/Reusable/FooterContent'
-import { MainContainer } from '../../styling/StyledContainer'
+import { exhibitions } from '../reducers/exhibitions'
+import { getMuseums } from '../reducers/thunks'
+import { HeaderContent } from '../components/Reusable/HeaderContent'
+import { ExhibitionList } from '../components/Exhibitions/ExhibitionList'
+import { FooterContent } from '../components/Reusable/FooterContent'
+import { MainContainer } from '../styling/StyledMain'
 
 export const ExhibitionsAdmin = () => {
 
@@ -30,7 +30,7 @@ export const ExhibitionsAdmin = () => {
   return (
     <MainContainer>
       <HeaderContent />
-      <ExhibitionsContentAdmin />
+      <ExhibitionList />
       <FooterContent />
     </MainContainer>
   )

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { exhibitions } from '../../reducers/exhibitions'
-import { HeaderContent } from '../../components/Reusable/HeaderContent'
-import { AddExhibitionContent } from '../../components/Admin/Add/AddExhibitionContent'
-import { FooterContent } from '../../components/Reusable/FooterContent'
-import { MainContainer } from '../../styling/StyledContainer'
+import { exhibitions } from '../reducers/exhibitions'
+import { HeaderContent } from '../components/Reusable/HeaderContent'
+import { AddExhibitionContent } from '../components/Admin/Add/AddExhibitionContent'
+import { FooterContent } from '../components/Reusable/FooterContent'
+import { MainContainer } from '../styling/StyledMain'
 
-export const Add = () => {
+export const AddExhibition = () => {
 
   const dispatch = useDispatch()
 

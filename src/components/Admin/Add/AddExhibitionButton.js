@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { LinkContainer, Button } from '../StyledAdmin'
+import { LinkWrapper, LinkContainer, Button } from '../../../styling/StyledAdmin'
 
 export const AddExhibitionButton = () => {
 
   return (
-    <LinkContainer to={`/admin/exhibitions/add`}>
-      <Button className='add'>Add Exhibition</Button>
-    </LinkContainer>
+    <LinkWrapper>
+      <LinkContainer to={`/admin/exhibitions/add`}>
+        <Button className='add'>Add Exhibition</Button>
+      </LinkContainer>
+    </LinkWrapper>
   )
 }

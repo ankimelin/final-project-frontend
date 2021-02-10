@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 
 import { exhibitions } from '../../reducers/exhibitions'
-import { FilterButton } from '../../styling/StyledButton'
+import { FilterButton } from '../../styling/StyledExhibitionFilter'
 
 export const ExhibitionFilterButton = ({ exhibitionList, activeFilter, filter }) => {
 

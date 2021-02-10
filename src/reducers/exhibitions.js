@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const exhibitions = createSlice({
   name: 'exhibitions',
   initialState: {
-    museums: [],
+    museums: [], // unused
     allExhibitions: [],
     displayedExhibitions: [],
     detailedExhibition: {},

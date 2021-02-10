@@ -7,10 +7,9 @@ import { exhibitions } from './reducers/exhibitions'
 import { Exhibitions } from './routes/Exhibitions'
 import { Exhibition } from './routes/Exhibition'
 import { AboutUs } from './routes/AboutUs'
-import { ExhibitionsAdmin } from './routes/Admin/ExhibitionsAdmin'
-import { Add } from './routes/Admin/Add'
-import { Update } from './routes/Admin/Update'
-import { Delete } from './routes/Admin/Delete'
+import { ExhibitionsAdmin } from './routes/ExhibitionsAdmin'
+import { AddExhibition } from './routes/AddExhibition'
+import { DeleteExhibition } from './routes/DeleteExhibition'
 import { NotFound } from './routes/NotFound'
 
 const reducer = combineReducers({
@@ -43,13 +42,10 @@ export const App = () => {
             <ExhibitionsAdmin />
           </Route>
           <Route exact path='/admin/exhibitions/add'>
-            <Add />
-          </Route>
-          <Route exact path='/admin/exhibitions/:exhibitionId/update'>
-            <Update />
+            <AddExhibition />
           </Route>
           <Route exact path='/admin/exhibitions/:exhibitionId/delete'>
-            <Delete />
+            <DeleteExhibition />
           </Route>
           <Route exact path='/not-found'>
             <NotFound />
