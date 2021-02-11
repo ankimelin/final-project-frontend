@@ -61,10 +61,12 @@ export const InputArea = styled.input`
   height: 25px;
   font-size: 12px;  
   font-family: 'Roboto', sans-serif;
+  
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 35px;
     font-size: 14px;
   }
+
   @media (min-width: 1024px) {
     height: 35px;
     font-size: 14px;
@@ -78,10 +80,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media(min-width: 1024px) {
-    
-  }
 `
 
 export const Button = styled.button`
@@ -100,13 +98,15 @@ export const Button = styled.button`
     color: black;
   }
 
-  @media(min-width: 768px) and(max-width: 1023px) {
+  @media(min-width: 768px) and (max-width: 1023px) {
+    width: 50%;
     font-size: 16px;
   }
 
   @media(min-width: 1024px) {
     width: 50%;
     font-size: 16px;
+
       &:hover {
       cursor: pointer;
       background-color: #10316b;

@@ -8,7 +8,7 @@ export const LinkWrapper = styled.div`
   height: 50px;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-  
+    height: 100px;
   }
   @media (min-width: 1024px) {
     height: 100px;
@@ -23,7 +23,7 @@ export const LinkContainer = styled(Link)`
   text-decoration: none;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    
+    width: 50%;
   }
   @media (min-width: 1024px) {
     width: 50%;
@@ -56,36 +56,26 @@ export const DeleteText = styled.p`
 `
 
 export const Button = styled.button`
-  margin: 20px 0 0 0;
+  margin: 5px 0 15px 0;
   padding: 10px;
-  border: 1px dashed black;
+  border-style: none;
+  width: 100%;
   font-size: 12px;
   background-color: #ececeb;
   font-weight: 600;
 
-&.add {
-  margin: 0;
-  width: 100%;
-  border-style: none;
-}
-  &.delete {
-    margin-left: 20px;
-  }
-  &.update {
-   
-  }
-  &.final-delete {
-    margin: 5px 0 15px 0;
-    border-style: none;
-    background-color:#ececeb;
+  &.add {
+    margin: 0;
     width: 100%;
-
+    border-style: none;
   }
-
+ 
   @media (min-width: 768px) and (max-width: 1023px) {
+    width: 50%;
     font-size: 16px;
   }
   @media (min-width: 1024px) {
+    width: 50%;
     font-size: 16px;
 
     &:hover {

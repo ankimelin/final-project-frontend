@@ -19,7 +19,7 @@ export const DeleteExhibitionQuestion = ({ ...exhibition }) => {
     <>
       <MessageText>Are you sure you want to delete {exhibition.title}?</MessageText>
       <ButtonContainer>
-        <Button className='final-delete' onClick={() => deleteOneExhibition(exhibitionId)}>Delete exhibition</Button>
+        <Button onClick={() => deleteOneExhibition(exhibitionId)}>Delete exhibition</Button>
       </ButtonContainer>
       <ExhibitionsLink to={'/admin/exhibitions'}>Go back to exhibitions {'>>'}</ExhibitionsLink>
     </>
