@@ -1,2 +1,2 @@
 # View it live
-https://final-project-curated.netlify.app/exhibitions
+https://final-project-curated.netlify.app
