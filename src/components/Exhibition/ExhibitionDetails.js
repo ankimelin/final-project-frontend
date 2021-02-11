@@ -25,7 +25,7 @@ export const ExhibitionDetails = () => {
   return (
     <>
       {status && loading &&
-        < LoaderContent />}
+        <LoaderContent />}
       {status && !loading &&
         <>
           <GoBackContent />

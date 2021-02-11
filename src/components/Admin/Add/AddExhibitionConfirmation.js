@@ -5,7 +5,7 @@ import { MessageContainer, MessageText, ExhibitionsLink } from '../../../styling
 export const AddExhibitionConfirmation = ({ ...exhibition }) => {
   return (
     <MessageContainer>
-      <MessageText>{exhibition.title} added.</MessageText>
+      <MessageText>Added: {exhibition.title}.</MessageText>
       <ExhibitionsLink to='/admin/exhibitions'>Go back to exhibitions{'>>'}</ExhibitionsLink>
     </MessageContainer>
   )

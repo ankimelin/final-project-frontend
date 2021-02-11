@@ -6,7 +6,7 @@ export const DeleteExhibitionConfirmation = ({ ...exhibition }) => {
 
   return (
     <>
-      <MessageText>{exhibition.title} deleted.</MessageText>
+      <MessageText>Deleted: {exhibition.title}.</MessageText>
       <ExhibitionsLink to='/admin/exhibitions'>Go back to exhibitions{'>>'}</ExhibitionsLink>
     </>
   )

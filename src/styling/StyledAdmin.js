@@ -72,11 +72,11 @@ export const Button = styled.button`
  
   @media (min-width: 768px) and (max-width: 1023px) {
     width: 50%;
-    font-size: 16px;
+    font-size: 14px;
   }
   @media (min-width: 1024px) {
     width: 50%;
-    font-size: 16px;
+    font-size: 14px;
 
     &:hover {
       background-color: #10316b;

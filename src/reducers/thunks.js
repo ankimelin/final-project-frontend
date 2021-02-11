@@ -1,18 +1,6 @@
 import { exhibitions } from './exhibitions'
 
-const MUSEUMS_URL = 'https://final-project-curated.herokuapp.com/museums'
 const EXHIBITIONS_URL = 'https://final-project-curated.herokuapp.com/exhibitions'
-
-export const getMuseums = () => {
-  return (dispatch) => {
-    fetch(MUSEUMS_URL)
-      .then(res => res.json()) // res.ok handling
-      .then(json => {
-        return dispatch(exhibitions.actions.setMuseums(json))
-      })
-      .catch(err => console.log(err)) // error handling
-  }
-}
 
 export const getExhibitions = (filter) => {
   return (dispatch) => {

@@ -30,11 +30,11 @@ export const FilterButton = styled.button`
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media (min-width: 1024px) {
-    font-size: 16px;
+    font-size: 14px;
 
     &:hover {
       cursor: pointer; 

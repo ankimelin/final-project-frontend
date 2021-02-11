@@ -3,32 +3,26 @@ import { createSlice } from '@reduxjs/toolkit'
 export const exhibitions = createSlice({
   name: 'exhibitions',
   initialState: {
-    museums: [], // unused
     allExhibitions: [],
     displayedExhibitions: [],
     detailedExhibition: {},
     activeFilter: 'Ongoing',
-
     activeAdmin: false,
     addedExhibition: {},
     exhibitionAdded: false,
     exhibitionDeleted: false,
-
     status: true,
     loadingAll: true,
     loadingOne: true,
     loadingAllAdmin: true
   },
   reducers: {
-    setMuseums: (state, action) => { // unused
-      state.museums = action.payload
-    },
     filterExhibitions: (state, action) => {
       const { exhibitions, filter } = action.payload
       const today = new Date().setHours(0, 0, 0, 0)
 
       if (state.allExhibitions.length === 0) {
-        state.allExhibitions = exhibitions
+        state.allExhibitions = [...exhibitions]
       } else if (filter === 'all') {
         state.activeFilter = 'Ongoing'
       } else {
@@ -60,16 +54,16 @@ export const exhibitions = createSlice({
         const adminExhibitions = exhibitions.sort((a, b) => {
           return b.endDate - a.endDate
         })
-        state.displayedExhibitions = adminExhibitions
+        state.displayedExhibitions = [...adminExhibitions]
       } else {
-        state.displayedExhibitions = sortedExhibitions
+        state.displayedExhibitions = [...sortedExhibitions]
       }
     },
     setDetailedExhibition: (state, action) => {
-      state.detailedExhibition = action.payload
+      state.detailedExhibition = { ...action.payload }
     },
     setAddedExhibition: (state, action) => {
-      state.addedExhibition = action.payload
+      state.addedExhibition = { ...action.payload }
     },
     setActiveFilter: (state, action) => {
       state.activeFilter = action.payload

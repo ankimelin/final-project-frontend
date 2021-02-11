@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 
-import { ExhibitionDetailsContainer, ExhibitionDetailsImage, ExhibitionDetailsImageText, ExhibitionDetailsDateContainer, ExhibitionDetailsTitle, ExhibitionDetailsText, ExternalExhibitionLink }
+import {
+  ExhibitionDetailsContainer,
+  ExhibitionDetailsImage, ExhibitionDetailsImageText,
+  ExhibitionDetailsDateContainer, ExhibitionDetailsDate,
+  ExhibitionDetailsTitle, ExhibitionDetailsMuseum,
+  ExhibitionDetailsArtists, ExternalExhibitionLink
+}
   from '../../styling/StyledExhibitionDetails'
 
 export const ExhibitionDetailsContent = ({ ...exhibition }) => {
@@ -16,14 +22,14 @@ export const ExhibitionDetailsContent = ({ ...exhibition }) => {
             <ExhibitionDetailsImageText>{exhibition.imageText}</ExhibitionDetailsImageText>
             <ExhibitionDetailsTitle>{exhibition.title}</ExhibitionDetailsTitle>
             <ExhibitionDetailsDateContainer>
-              <ExhibitionDetailsText className='date'>{exhibition.startDate}</ExhibitionDetailsText>
-              <ExhibitionDetailsText className='space'>-</ExhibitionDetailsText>
-              <ExhibitionDetailsText className='date'>{exhibition.endDate}</ExhibitionDetailsText>
+              <ExhibitionDetailsDate>{exhibition.startDate}</ExhibitionDetailsDate>
+              <ExhibitionDetailsDate className='space'>-</ExhibitionDetailsDate>
+              <ExhibitionDetailsDate className='date'>{exhibition.endDate}</ExhibitionDetailsDate>
             </ExhibitionDetailsDateContainer>
-            <ExhibitionDetailsText className='museum'>{exhibition.museum}</ExhibitionDetailsText>
-            <ExhibitionDetailsText className={exhibition.artists.length > 2 ? 'artists many' : 'artists'}>
+            <ExhibitionDetailsMuseum>{exhibition.museum}</ExhibitionDetailsMuseum>
+            <ExhibitionDetailsArtists className={exhibition.artists.length > 2 ? 'many' : null}>
               {exhibition.artists.length > 0 ? exhibition.artists.map(artist => artist).join(', ') : null}
-            </ExhibitionDetailsText>
+            </ExhibitionDetailsArtists>
             <ExternalExhibitionLink href={exhibition.link}>Go to exhibition{'>>'}</ExternalExhibitionLink>
           </>
         }
