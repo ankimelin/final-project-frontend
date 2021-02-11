@@ -21,7 +21,7 @@ export const Exhibitions = () => {
   return (
     <MainContainer>
       <HeaderContent />
-      <ExhibitionList />
+      <ExhibitionList filter='Ongoing' />
       <FooterContent />
     </MainContainer>
   )

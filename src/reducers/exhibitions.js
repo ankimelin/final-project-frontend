@@ -7,7 +7,7 @@ export const exhibitions = createSlice({
     allExhibitions: [],
     displayedExhibitions: [],
     detailedExhibition: {},
-    activeFilter: 'Ongoing',
+    activeFilter: '',
 
     activeAdmin: false,
     addedExhibition: {},
@@ -20,7 +20,7 @@ export const exhibitions = createSlice({
     loadingAllAdmin: true
   },
   reducers: {
-    setMuseums: (state, action) => {
+    setMuseums: (state, action) => { // unused
       state.museums = action.payload
     },
     filterExhibitions: (state, action) => {

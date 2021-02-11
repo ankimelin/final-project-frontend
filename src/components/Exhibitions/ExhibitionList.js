@@ -8,21 +8,15 @@ import { AddExhibitionButton } from '../Admin/Add/AddExhibitionButton'
 import { ExhibitionListContent } from './ExhibitionListContent'
 import { NotFoundContent } from '../Reusable/NotFoundContent'
 
-export const ExhibitionList = () => {
+export const ExhibitionList = ({ filter }) => {
 
   const dispatch = useDispatch()
   const admin = useSelector(store => store.exhibitions.activeAdmin)
-  const activeFilter = useSelector(store => store.exhibitions.activeFilter)
   const status = useSelector(store => store.exhibitions.status)
   const loading = useSelector(store => store.exhibitions.loadingAll)
+  const loadingAdmin = useSelector(store => store.exhibitions.loadingAllAdmin)
 
   const getAllExhibitions = () => {
-    let filter
-    if (admin) {
-      filter = 'all'
-    } else {
-      filter = activeFilter
-    }
     dispatch(getExhibitions(filter))
   }
 
@@ -30,13 +24,25 @@ export const ExhibitionList = () => {
 
   return (
     <>
-      {status && loading &&
-        <LoaderContent />}
-      {status && !loading &&
+      {!admin &&
         <>
-          {!admin && <ExhibitionFilterList />}
-          {admin && <AddExhibitionButton />}
-          <ExhibitionListContent />
+          {status && loading &&
+            <LoaderContent />}
+          {status && !loading &&
+            <>
+              <ExhibitionFilterList />
+              <ExhibitionListContent />
+            </>}
+        </>}
+      {admin &&
+        <>
+          {status && loadingAdmin &&
+            <LoaderContent />}
+          {status && !loadingAdmin &&
+            <>
+              <AddExhibitionButton />
+              <ExhibitionListContent />
+            </>}
         </>}
       {!status &&
         <NotFoundContent />}

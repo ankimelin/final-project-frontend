@@ -9,7 +9,7 @@ import { LoaderContent } from '../../Reusable/LoaderContent'
 import { NotFoundContent } from '../../Reusable/NotFoundContent'
 import { MessageContainer } from '../../../styling/StyledMessage'
 
-export const DeleteExhibitionContent = () => {
+export const DeleteExhibition = () => {
 
   const dispatch = useDispatch()
   const { exhibitionId } = useParams()

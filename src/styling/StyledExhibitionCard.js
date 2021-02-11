@@ -26,15 +26,6 @@ export const ExhibitionCardContainer = styled.div`
     }
   }
 `
-export const ExhibitionCardImageContainer = styled.div`
-  margin: 0;
-  padding: 0;
-  width: 100%;
-`
-
-export const ExhibitionCardTextContainer = styled.div`
- 
-`
 
 export const ExhibitionCardDateContainer = styled.div`
   display: flex;

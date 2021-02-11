@@ -22,7 +22,6 @@ export const getExhibitions = (filter) => {
       dispatch(exhibitions.actions.setLoadingAll(true))
     }
     dispatch(exhibitions.actions.setStatus(true))
-
     fetch(EXHIBITIONS_URL)
       .then(res => {
         dispatch(exhibitions.actions.setStatus(res.ok))

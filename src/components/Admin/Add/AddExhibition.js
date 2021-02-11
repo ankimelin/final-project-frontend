@@ -5,7 +5,7 @@ import { NotFoundContent } from '../../Reusable/NotFoundContent'
 import { AddExhibitionForm } from './AddExhibitionForm'
 import { AddExhibitionConfirmation } from './AddExhibitionConfirmation'
 
-export const AddExhibitionContent = () => {
+export const AddExhibition = () => {
 
   const exhibitionAdded = useSelector(store => store.exhibitions.exhibitionAdded)
   const status = useSelector(store => store.exhibitions.status)
