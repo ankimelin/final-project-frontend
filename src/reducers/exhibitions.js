@@ -7,7 +7,7 @@ export const exhibitions = createSlice({
     allExhibitions: [],
     displayedExhibitions: [],
     detailedExhibition: {},
-    activeFilter: '',
+    activeFilter: 'Ongoing',
 
     activeAdmin: false,
     addedExhibition: {},
