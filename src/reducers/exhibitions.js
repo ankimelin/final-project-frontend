@@ -18,6 +18,7 @@ export const exhibitions = createSlice({
   },
   reducers: {
     filterExhibitions: (state, action) => {
+
       const { exhibitions, filter } = action.payload
       const today = new Date().setHours(0, 0, 0, 0)
 
@@ -37,7 +38,7 @@ export const exhibitions = createSlice({
           return exhibition.startDate > today
         } else if (filter === 'Past') {
           return exhibition.endDate < today
-        } else return null
+        } else return exhibition
       })
 
       const sortedExhibitions = filteredExhibitions.sort((a, b) => {
@@ -47,17 +48,11 @@ export const exhibitions = createSlice({
           return b.endDate - a.endDate
         } else if (filter === 'Future') {
           return a.startDate - b.startDate
-        } else return null
+        } else return b.endDate - a.endDate
       })
 
-      if (filter === 'all') {
-        const adminExhibitions = exhibitions.sort((a, b) => {
-          return b.endDate - a.endDate
-        })
-        state.displayedExhibitions = [...adminExhibitions]
-      } else {
-        state.displayedExhibitions = [...sortedExhibitions]
-      }
+      state.displayedExhibitions = [...sortedExhibitions]
+
     },
     setDetailedExhibition: (state, action) => {
       state.detailedExhibition = { ...action.payload }

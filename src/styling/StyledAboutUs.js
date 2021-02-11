@@ -22,13 +22,13 @@ export const AboutText = styled.p`
   text-align: right; 
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  line-height: 24px;
-  font-size: 20px;
+  line-height: 22px;
+  font-size: 18px;
 }
 
 @media (min-width: 1024px) {
-  line-height: 24px;
-  font-size: 20px;
+  line-height: 22px;
+  font-size: 18px;
 }
 `
 

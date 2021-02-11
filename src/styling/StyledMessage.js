@@ -21,15 +21,15 @@ export const MessageContainer = styled.div`
 
 export const MessageText = styled.p`
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   @media (min-width: 1024px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `
 

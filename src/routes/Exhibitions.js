@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { exhibitions } from '../reducers/exhibitions'
 import { HeaderContent } from '../components/Reusable/HeaderContent'
@@ -10,6 +10,7 @@ import { MainContainer } from '../styling/StyledMain'
 export const Exhibitions = () => {
 
   const dispatch = useDispatch()
+  const filter = useSelector(store => store.exhibitions.activeFilter)
 
   const clearStates = () => {
     dispatch(exhibitions.actions.setActiveAdmin(false))
@@ -21,7 +22,7 @@ export const Exhibitions = () => {
   return (
     <MainContainer>
       <HeaderContent />
-      <ExhibitionList filter='Ongoing' />
+      <ExhibitionList filter={filter} />
       <FooterContent />
     </MainContainer>
   )

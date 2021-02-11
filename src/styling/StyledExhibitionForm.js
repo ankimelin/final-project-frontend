@@ -46,11 +46,13 @@ export const InputLabel = styled.label`
   padding: 15px 0 5px 10px;
   font-size: 12px;
   font-family: 'Arial', sans-serif;
+
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 18px;
+    font-size: 14px;
   }
+  
   @media (min-width: 1024px) {
-    font-size: 18px;
+    font-size: 14px;
   }
 `
 
@@ -100,12 +102,12 @@ export const Button = styled.button`
 
   @media(min-width: 768px) and (max-width: 1023px) {
     width: 50%;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media(min-width: 1024px) {
     width: 50%;
-    font-size: 16px;
+    font-size: 14px;
 
       &:hover {
       cursor: pointer;
