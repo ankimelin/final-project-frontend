@@ -9,6 +9,7 @@ import { Exhibition } from './routes/Exhibition'
 import { AboutUs } from './routes/AboutUs'
 import { AdminExhibitions } from './routes/AdminExhibitions'
 import { AdminAddExhibition } from './routes/AdminAddExhibition'
+import { AdminUpdateExhibition } from './routes/AdminUpdateExhibition'
 import { AdminDeleteExhibition } from './routes/AdminDeleteExhibition'
 import { NotFound } from './routes/NotFound'
 
@@ -43,6 +44,9 @@ export const App = () => {
           </Route>
           <Route exact path='/admin/exhibitions/add'>
             <AdminAddExhibition />
+          </Route>
+          <Route exact path='/admin/exhibitions/:exhibitionId/update'>
+            <AdminUpdateExhibition />
           </Route>
           <Route exact path='/admin/exhibitions/:exhibitionId/delete'>
             <AdminDeleteExhibition />

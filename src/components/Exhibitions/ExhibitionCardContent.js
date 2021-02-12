@@ -15,7 +15,7 @@ export const ExhibitionCardContent = ({ admin, ...exhibition }) => {
   const filter = useSelector(store => store.exhibitions.activeFilter)
 
   return (
-    <ExhibitionCardContainer>
+    <ExhibitionCardContainer className={admin ? 'admin' : null}>
       <ExhibitionCardTitle>{exhibition.title}</ExhibitionCardTitle>
       <ExhibitionCardDateContainer>{filter === 'Ongoing' && !admin ?
         <ExhibitionCardDate className='until'>Until</ExhibitionCardDate> :
@@ -29,12 +29,12 @@ export const ExhibitionCardContent = ({ admin, ...exhibition }) => {
       {admin && <ExhibitionCardArtists>{exhibition.artists.length > 0 ?
         exhibition.artists.map(artist => artist).join(', ') :
         null}</ExhibitionCardArtists>}
-      <ExhibitionCardImage src={exhibition.image} />
+      <ExhibitionCardImage src={exhibition.image} alt={exhibition.title} />
       <ExhibitionCardImageText>{exhibition.imageText}</ExhibitionCardImageText>
       {admin && <>
         <ExhibitionCardLinkContainer>
           <UpdateAndDeleteLink
-            to={`/admin`}>
+            to={`/admin/exhibitions/${exhibition.id}/update`}>
             Update Exhibition
               </UpdateAndDeleteLink>
           <UpdateAndDeleteLink

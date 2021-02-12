@@ -30,6 +30,7 @@ export const BackIcon = styled.img`
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
+  margin: 0;
   padding: 0 0 75px 0;
   
   @media (min-width: 768px) and (max-width: 1023px) {
@@ -46,6 +47,10 @@ export const InputLabel = styled.label`
   padding: 15px 0 5px 10px;
   font-size: 12px;
   font-family: 'Arial', sans-serif;
+
+  &:first-child {
+    padding: 0 0 5px 10px;
+  }
 
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 14px;

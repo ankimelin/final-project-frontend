@@ -16,7 +16,7 @@ export const ExhibitionDetailsContent = ({ ...exhibition }) => {
   return (
     <>
       <ExhibitionDetailsContainer>
-        <ExhibitionDetailsImage onLoad={() => setImage(true)} src={exhibition.image} />
+        <ExhibitionDetailsImage onLoad={() => setImage(true)} src={exhibition.image} alt={exhibition.title} />
         {image &&
           <>
             <ExhibitionDetailsImageText>{exhibition.imageText}</ExhibitionDetailsImageText>
@@ -30,7 +30,7 @@ export const ExhibitionDetailsContent = ({ ...exhibition }) => {
             <ExhibitionDetailsArtists className={exhibition.artists.length > 2 ? 'many' : null}>
               {exhibition.artists.length > 0 ? exhibition.artists.map(artist => artist).join(', ') : null}
             </ExhibitionDetailsArtists>
-            <ExternalExhibitionLink href={exhibition.link}>Go to exhibition{'>>'}</ExternalExhibitionLink>
+            <ExternalExhibitionLink href={exhibition.link} target='blank'>Go to exhibition{'>>'}</ExternalExhibitionLink>
           </>
         }
       </ExhibitionDetailsContainer>

@@ -21,6 +21,10 @@ export const FooterContainer = styled.div`
   @media (min-width: 1500px) {
     width: calc(100% - 1000px);
   }
+
+  @media (min-width: 1700px) {
+    width: calc(100% - 1200px);
+  }
 `
 
 export const FooterText = styled.p`

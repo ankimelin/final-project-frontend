@@ -37,6 +37,10 @@ export const ExhibitionCardContainer = styled.div`
     &:hover ${ExhibitionCardTitle} {
      text-decoration: underline;
     }
+
+    &.admin:hover ${ExhibitionCardTitle} {
+      text-decoration: none;
+    }
     }
   }
 `
@@ -137,18 +141,18 @@ export const ExhibitionCardLinkContainer = styled.div`
 export const UpdateAndDeleteLink = styled(Link)`
   margin: 0;
   padding: 10px 0 0 0;
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Arial', sans-serif; 
   font-weight: 600;
   text-decoration: none;
   color: #e25822;
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 16px;
+    font-size: 14px;
   }
   
   @media (min-width: 1024px) {
-    font-size: 16px;
+    font-size: 14px;
 
     &:hover {
       text-decoration: underline;
