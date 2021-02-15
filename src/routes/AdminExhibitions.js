@@ -14,8 +14,9 @@ export const AdminExhibitions = () => {
   const clearStates = () => {
     dispatch(exhibitions.actions.setAddedExhibition(null))
     dispatch(exhibitions.actions.setActiveAdmin(true))
-    dispatch(exhibitions.actions.setExhibitionDeleted(false))
     dispatch(exhibitions.actions.setExhibitionAdded(false))
+    dispatch(exhibitions.actions.setExhibitionUpdated(false))
+    dispatch(exhibitions.actions.setExhibitionDeleted(false))
     dispatch(exhibitions.actions.setLoadingOne(true))
   }
 

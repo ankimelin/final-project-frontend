@@ -108,6 +108,59 @@ export const addExhibition = (title, museum, artists, startDate, endDate, link, 
   }
 }
 
+export const updateExhibition = (id, title, museum, artists, startDate, endDate, link, image, imageText) => {
+  // backend cannot recieve empty strings for the required fields, so empty strings are converted into undefined
+  // if (!title) {
+  //   title = undefined
+  // }
+  // if (!museum) {
+  //   museum = undefined
+  // }
+  // if (!artists[0]) {
+  //   artists = undefined
+  // }
+  // if (!startDate) {
+  //   startDate = undefined
+  // }
+  // if (!endDate) {
+  //   endDate = undefined
+  // }
+  // if (!link) {
+  //   link = undefined
+  // }
+  // if (!image) {
+  //   image = undefined
+  // }
+  // if (!imageText) {
+  //   imageText = undefined
+  // }
+  const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
+  return (dispatch) => {
+    dispatch(exhibitions.actions.setStatus(true))
+    dispatch(exhibitions.actions.setLoadingOne(true))
+    fetch(EXHIBITION_URL, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, museum, artists, startDate, endDate, link, image, imageText })
+    })
+      .then(res => {
+        dispatch(exhibitions.actions.setStatus(res.ok))
+        return res.json()
+      })
+      .then(json => {
+        dispatch(exhibitions.actions.setUpdatedExhibition(json))
+        dispatch(exhibitions.actions.setExhibitionUpdated(true))
+      })
+      .catch(err => {
+        console.log(err)
+        dispatch(exhibitions.actions.setStatus(false))
+      })
+      .finally(() => {
+        dispatch(exhibitions.actions.setLoadingOne(false))
+      })
+  }
+}
+
 export const deleteExhibition = (id) => {
   const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
   return (dispatch) => {

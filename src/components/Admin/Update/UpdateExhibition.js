@@ -4,9 +4,11 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getExhibition } from '../../../reducers/thunks'
 import { LoaderContent } from '../../Reusable/LoaderContent'
-import { UpdateExhibitionContent } from './UpdateExhibitionContent'
+import { UpdateExhibitionForm } from './UpdateExhibitionForm'
+import { UpdateExhibitionConfirmation } from './UpdateExhibitionConfirmation'
+// import { UpdateExhibitionContent } from './UpdateExhibitionContent'
 import { NotFoundContent } from '../../Reusable/NotFoundContent'
-import { MessageContainer } from '../../../styling/StyledMessage'
+// import { MessageContainer } from '../../../styling/StyledMessage'
 
 export const UpdateExhibition = () => {
 
@@ -15,6 +17,8 @@ export const UpdateExhibition = () => {
   const status = useSelector(store => store.exhibitions.status)
   const loading = useSelector(store => store.exhibitions.loadingOne)
   const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
+  const exhibitionUpdated = useSelector(store => store.exhibitions.exhibitionUpdated)
+  const updatedExhibition = useSelector(store => store.exhibitions.updatedExhibition)
 
   const getOneExhibition = () => {
     dispatch(getExhibition(exhibitionId))
@@ -25,10 +29,10 @@ export const UpdateExhibition = () => {
   return (
     <>
       {status && loading && <LoaderContent />}
-      {status && !loading &&
-        <MessageContainer>
-          <UpdateExhibitionContent {...exhibition} />
-        </MessageContainer >}
+      {status && !loading && !exhibitionUpdated &&
+        <UpdateExhibitionForm {...exhibition} />}
+      {status && !loading && exhibitionUpdated &&
+        <UpdateExhibitionConfirmation {...updatedExhibition} />}
       {!status && <NotFoundContent />}
     </>
   )

@@ -72,9 +72,17 @@ export const ExhibitionCardDate = styled.p`
     @media (min-width: 1024px) {
       margin-right: 5px;
     }
+  }
 
   &.space {
     margin: 0 5px;
+  }
+
+  &.last {
+    padding: 0 0 0 5px;
+    font-family: 'Arial', sans-serif; 
+    font-weight: 600;
+    color: #e25822;
   }
 `
 
@@ -92,7 +100,7 @@ export const ExhibitionCardMuseum = styled.p`
 `
 
 export const ExhibitionCardArtists = styled.p`
-  margin: 2px 0;
+  margin: 2px 0 0 0;
   font-size: 12px;
   
   @media (min-width: 768px) and (max-width: 1023px) {

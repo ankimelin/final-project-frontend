@@ -6,10 +6,12 @@ export const exhibitions = createSlice({
     allExhibitions: [],
     displayedExhibitions: [],
     detailedExhibition: {},
+    addedExhibition: {},
+    updatedExhibition: {},
     activeFilter: 'Ongoing',
     activeAdmin: false,
-    addedExhibition: {},
     exhibitionAdded: false,
+    exhibitionUpdated: false,
     exhibitionDeleted: false,
     status: true,
     loadingAll: true,
@@ -18,7 +20,6 @@ export const exhibitions = createSlice({
   },
   reducers: {
     filterExhibitions: (state, action) => {
-
       const { exhibitions, filter } = action.payload
       const today = new Date().setHours(0, 0, 0, 0)
 
@@ -60,6 +61,9 @@ export const exhibitions = createSlice({
     setAddedExhibition: (state, action) => {
       state.addedExhibition = { ...action.payload }
     },
+    setUpdatedExhibition: (state, action) => {
+      state.updatedExhibition = { ...action.payload }
+    },
     setActiveFilter: (state, action) => {
       state.activeFilter = action.payload
     },
@@ -68,6 +72,9 @@ export const exhibitions = createSlice({
     },
     setExhibitionAdded: (state, action) => {
       state.exhibitionAdded = action.payload
+    },
+    setExhibitionUpdated: (state, action) => {
+      state.exhibitionUpdated = action.payload
     },
     setExhibitionDeleted: (state, action) => {
       state.exhibitionDeleted = action.payload
