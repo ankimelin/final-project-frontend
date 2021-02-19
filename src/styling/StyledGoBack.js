@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const GoBackLink = styled(Link)`
+export const GoBackLinkContainer = styled.div`
   display: flex;
   align-items: center;
   height: 50px;
-
-  cursor:  unset;
 
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 100px;
@@ -15,6 +13,9 @@ export const GoBackLink = styled(Link)`
   @media (min-width: 1024px) {
     height: 100px;
   }
+`
+
+export const GoBackLink = styled(Link)`
 `
 
 export const GoBackImage = styled.img`

@@ -21,13 +21,6 @@ export const LinkContainer = styled(Link)`
   align-items: center;
   width: 100%;
   text-decoration: none;
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    width: 50%;
-  }
-  @media (min-width: 1024px) {
-    width: 50%;
-  }
 `
 
 export const ButtonContainer = styled.div`
@@ -35,24 +28,6 @@ export const ButtonContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-`
-
-export const DeleteContainer = styled.div`
-  padding: 50px 25px 75px 25px;
-`
-
-export const Text = styled.p`
-  margin: 0;
-  line-height: 20px;
-  text-align: center;
-  font-size: 16px;
-`
-
-export const DeleteText = styled.p`
-  margin: 25px 0;
-  line-height: 20px;
-  text-align: center;
-  font-size: 16px;
 `
 
 export const Button = styled.button`
@@ -66,14 +41,13 @@ export const Button = styled.button`
 
   &.add {
     margin: 0;
-    width: 100%;
-    border-style: none;
   }
  
   @media (min-width: 768px) and (max-width: 1023px) {
     width: 50%;
     font-size: 14px;
   }
+  
   @media (min-width: 1024px) {
     width: 50%;
     font-size: 14px;
@@ -85,24 +59,3 @@ export const Button = styled.button`
     }
 `
 
-export const UpdateAndDeleteLink = styled(Link)`
-  margin: 0;
-  padding: 10px 0 0 0;
-  font-size: 12px;
-  font-family: 'Arial', sans-serif; 
-  font-weight: 600;
-  text-decoration: none;
-  color: #e25822;
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    font-size: 14px;
-  }
-  
-  @media (min-width: 1024px) {
-    font-size: 14px;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`

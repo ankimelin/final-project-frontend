@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { GoBackLink, GoBackImage } from '../../styling/StyledGoBack'
+import { GoBackLinkContainer, GoBackLink, GoBackImage } from '../../styling/StyledGoBack'
 
 export const GoBackContent = () => {
 
   const admin = useSelector(store => store.exhibitions.activeAdmin)
 
   return (
-    <>
+    <GoBackLinkContainer>
       {!admin &&
         <GoBackLink to='/'>
           <GoBackImage
@@ -23,6 +23,6 @@ export const GoBackContent = () => {
             alt='go back'>
           </GoBackImage>
         </GoBackLink >}
-    </>
+    </GoBackLinkContainer>
   )
 }
