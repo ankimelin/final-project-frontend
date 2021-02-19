@@ -6,9 +6,7 @@ import { getExhibition } from '../../../reducers/thunks'
 import { LoaderContent } from '../../Reusable/LoaderContent'
 import { UpdateExhibitionForm } from './UpdateExhibitionForm'
 import { UpdateExhibitionConfirmation } from './UpdateExhibitionConfirmation'
-// import { UpdateExhibitionContent } from './UpdateExhibitionContent'
 import { NotFoundContent } from '../../Reusable/NotFoundContent'
-// import { MessageContainer } from '../../../styling/StyledMessage'
 
 export const UpdateExhibition = () => {
 

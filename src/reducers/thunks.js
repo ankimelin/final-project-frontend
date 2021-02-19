@@ -109,31 +109,6 @@ export const addExhibition = (title, museum, artists, startDate, endDate, link, 
 }
 
 export const updateExhibition = (id, title, museum, artists, startDate, endDate, link, image, imageText) => {
-  // backend cannot recieve empty strings for the required fields, so empty strings are converted into undefined
-  // if (!title) {
-  //   title = undefined
-  // }
-  // if (!museum) {
-  //   museum = undefined
-  // }
-  // if (!artists[0]) {
-  //   artists = undefined
-  // }
-  // if (!startDate) {
-  //   startDate = undefined
-  // }
-  // if (!endDate) {
-  //   endDate = undefined
-  // }
-  // if (!link) {
-  //   link = undefined
-  // }
-  // if (!image) {
-  //   image = undefined
-  // }
-  // if (!imageText) {
-  //   imageText = undefined
-  // }
   const EXHIBITION_URL = `https://final-project-curated.herokuapp.com/exhibitions/${id}`
   return (dispatch) => {
     dispatch(exhibitions.actions.setStatus(true))

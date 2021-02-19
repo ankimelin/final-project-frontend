@@ -16,7 +16,8 @@ export const DeleteExhibition = () => {
   const status = useSelector(store => store.exhibitions.status)
   const loading = useSelector(store => store.exhibitions.loadingOne)
   const exhibition = useSelector(store => store.exhibitions.detailedExhibition)
-  const exhibitionDeleted = useSelector(store => store.exhibitions.exhibitionDeleted)
+  const exhibitionDeleted = useSelector(store =>
+    store.exhibitions.exhibitionDeleted)
 
   const getOneExhibition = () => {
     dispatch(getExhibition(exhibitionId))

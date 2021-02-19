@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux'
 
 import { updateExhibition } from '../../../reducers/thunks'
 import { GoBackContent } from '../../Reusable/GoBackContent'
-import { FormContainer, InputLabel, InputArea, ButtonContainer, Button } from '../../../styling/StyledExhibitionForm'
+import { FormContainer, InputLabel, InputArea, ButtonContainer, Button }
+  from '../../../styling/StyledExhibitionForm'
 
 export const UpdateExhibitionForm = ({ ...exhibition }) => {
 
