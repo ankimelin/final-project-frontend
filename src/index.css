@@ -5,5 +5,8 @@ body {
 
   font-family: 'Roboto', sans-serif;
   overflow-y: overlay;
+  
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
