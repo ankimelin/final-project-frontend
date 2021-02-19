@@ -5,5 +5,7 @@ body {
 
   font-family: 'Roboto', sans-serif;
   overflow-y: overlay;
+
   overflow-x: hidden;
+  height: 100%;
 }
