@@ -15,7 +15,7 @@ export const MessageContainer = styled.div`
   }
 
   @media (min-width: 1024px) {
-
+    height: calc(100vh - 252px);
   }
 `
 

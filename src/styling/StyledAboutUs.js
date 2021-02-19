@@ -2,14 +2,17 @@ import styled from 'styled-components'
 
 export const AboutContainer = styled.div`
   margin: 50px 0 75px 0;
+  height: calc(100vh - 227px);
   padding-top: 25px;
   border-top: solid 1px black;
   
   @media (min-width: 768px) and (max-width: 1023px) {
+    height: calc(100vh - 252px);
     padding-top: 50px;
   }
 
   @media (min-width: 1024px) {
+    height: calc(100vh - 252px);
     padding-top: 50px;
   }
 `
