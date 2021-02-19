@@ -10,8 +10,6 @@ export const FooterContainer = styled.div`
   width: calc(100% - 50px);
   border-top: solid 1px black;
 
-  flex-shrink: 0;
-
   @media (min-width: 768px) and (max-width: 1023px) {
     width: calc(100% - 100px);
   }
