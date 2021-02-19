@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const MainContainer = styled.div`
   position: relative;
-  min-height: calc(100vh - 100px);
+  min-height: 100vh;
   padding: 0 25px;
 
   @media (min-width: 768px) and (max-width: 1023px) {
