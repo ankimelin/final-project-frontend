@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const AboutContainer = styled.div`
-  height: calc(100vh - 227px);
-
   margin: 50px 0 75px 0;
   padding-top: 25px;
   border-top: solid 1px black;
