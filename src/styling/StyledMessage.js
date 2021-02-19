@@ -8,7 +8,7 @@ export const MessageContainer = styled.div`
   justify-content: center;
   margin-top: 50px;
   border-top: solid 1px black;
-  height: calc(100vh - 227px);
+  height: calc(100vh - 252px);
 
   @media (min-width: 768px) and (max-width: 1023px) {
     height: calc(100vh - 252px);
