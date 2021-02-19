@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const MainContainer = styled.div`
-
+  position: relative;
+  min-height: 100vh;
   padding: 0 25px;
 
   flex: 1 0 auto;
@@ -23,8 +24,7 @@ export const MainContainer = styled.div`
   }
 `
 
-// position: relative;
-// min-height: 100vh;
+
 
 
 

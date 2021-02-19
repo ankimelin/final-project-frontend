@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const FooterContainer = styled.div`
-
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +42,3 @@ export const FooterText = styled.p`
     font-size: 16px;
   }
 `
-
-// position: absolute;
-// bottom: 0;
