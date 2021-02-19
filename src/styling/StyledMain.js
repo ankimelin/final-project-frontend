@@ -5,10 +5,6 @@ export const MainContainer = styled.div`
   min-height: 100vh;
   padding: 0 25px;
 
-  @media (max-width: 1023px) {
-    min-height: -webkit-fill-available;
-  }
-
   @media (min-width: 768px) and (max-width: 1023px) {
     padding: 0 50px;
   }
